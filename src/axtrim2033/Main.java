@@ -29,7 +29,7 @@ public class Main {
             switch (escolha) {
                 case 1:
                     //chamar método para as instruções
-                    System.out.println("Instruções");
+                    instrucoes();
                     break;
                 case 2:
                     //chamar método para jogar
@@ -41,7 +41,7 @@ public class Main {
                     break;
                 case 4:
                     //chamar metodo para sair
-                    System.exit(0);
+                    sairDoJogo();
                     break;
                 default:
                     System.out.println("Opção inválida!");
@@ -754,7 +754,51 @@ public class Main {
         return true;
     }
 
+    public static void instrucoes() {
+        Scanner sc = new Scanner(System.in);
+        int escolha = 0;
+        System.out.println("- Instruções -");
+        System.out.println("Axtrim2033 apresenta vários desafios de multipla escolha, \n" +
+                "basta escolhar uma das alternativas que será exibida (a,b,c,d OU e).\n" +
+                "mas escolha com sabedoria, o destino do mundo está em suas mãos...");
+        do {
+            System.out.println("");
+            System.out.println("1 - Voltar para o menu principal");
+            escolha = sc.nextInt();
+            switch (escolha) {
+                case 1:
+                    menu(sc);
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+        } while (escolha != 1);
+    }
+
     public static void creditos() {
+        Scanner sc = new Scanner(System.in);
+        int escolha = 0;
+        System.out.println("- Desenvolvido por - ");
+        System.out.println("");
+        System.out.println("-------------------");
+        System.out.println("*  Edson Costa    *");
+        System.out.println("*  Henrique Obata *");
+        System.out.println("*  Julio Domingos *");
+        System.out.println("*  Paulo Ribeiro  *");
+        System.out.println("*  Rennan Costa   *");
+        System.out.println("-------------------");
+        do {
+            System.out.println("");
+            System.out.println("1 - Voltar para o menu principal");
+            escolha = sc.nextInt();
+            switch (escolha) {
+                case 1:
+                    menu(sc);
+                    break;
+                default:
+                    System.out.println("Opção inválida");
+            }
+        } while (escolha != 1);
     }
 
     public static void imprimiTexto(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
@@ -764,14 +808,7 @@ public class Main {
         }
     }
 
-    public static void limparConsole() {
-        try {
-            new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public static void sairDoJogo() {
+        System.exit(0);
     }
-
 }
