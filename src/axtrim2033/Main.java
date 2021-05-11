@@ -16,6 +16,8 @@ public class Main {
 
         desafio1(entrada);
         desafio2(entrada);
+        desafio3(entrada);
+        desafio4(entrada);
 
         //TODO: meus desafios 3 e 4(Rennan Costa)
         //meus desafios
@@ -168,6 +170,182 @@ public class Main {
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                default:
+                    System.out.println("Resposta incorreta, tente novamente.");
+                    break;
+            }
+        } while (!acerto);
+    }
+
+    public static void desafio3(Scanner sc) {
+        boolean acerto = false;
+        String tabela = "-------------\n" +
+                "| A | B | S |\n" +
+                "| 0 | 0 | 1 |\n" +
+                "| 0 | 1 | 0 |\n" +
+                "| 1 | 0 | 0 |\n" +
+                "| 1 | 1 | 0 |\n" +
+                "-------------";
+        String questao3 = "Observando a tabela podemos dizer que a porta logica que esta sendo utilizada é a:";
+        String respostaCorretaQuestao3 = "NOR";
+        List<String> alternativasQuestao3 = new ArrayList<>();
+
+        //populando a lista com as alternativas
+        alternativasQuestao3.add(respostaCorretaQuestao3);
+        alternativasQuestao3.add("NAND");
+        alternativasQuestao3.add("XNOR");
+        alternativasQuestao3.add("AND");
+        alternativasQuestao3.add("OR");
+
+        //exibindo a pergunta:
+        System.out.println("");
+        System.out.println(tabela);
+        System.out.println(questao3);
+        System.out.println();
+
+        do {
+            //embaralhando as alternativas
+            Collections.shuffle(alternativasQuestao3);
+
+            //recuperando as alternativas pelo indice da lista
+            System.out.println("a) " + alternativasQuestao3.get(0));
+            System.out.println("b) "+ alternativasQuestao3.get(1));
+            System.out.println("c) "+ alternativasQuestao3.get(2));
+            System.out.println("d) "+ alternativasQuestao3.get(3));
+            System.out.println("e) "+ alternativasQuestao3.get(4));
+
+            System.out.println("");
+            System.out.println("Escolha uma alternativa: ");
+
+            //capturando o primeiro caractere digitado e forçando ele a ser minusculo
+            char alt = sc.next().toLowerCase().charAt(0);
+
+            switch (alt) {
+                case 'a':
+                    //comparando a alternativa escolhida com a resposta correta
+                    if (alternativasQuestao3.get(0).equals(respostaCorretaQuestao3)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'b':
+                    if (alternativasQuestao3.get(1).equals(respostaCorretaQuestao3)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'c':
+                    if (alternativasQuestao3.get(2).equals(respostaCorretaQuestao3)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'd':
+                    if (alternativasQuestao3.get(3).equals(respostaCorretaQuestao3)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'e':
+                    if (alternativasQuestao3.get(4).equals(respostaCorretaQuestao3)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                default:
+                    System.out.println("Resposta incorreta, tente novamente.");
+                    break;
+            }
+        } while (!acerto);
+    }
+
+    public static void desafio4(Scanner sc) {
+        boolean acerto = false;
+        String questao4 = "Qual a expressão booleana representa corretamente a operação OR ?";
+        String respostaCorretaQuestao4 = "S = A + B";
+        List<String> alternativasQuestao4 = new ArrayList<>();
+
+        //populando a lista com as alternativas
+        alternativasQuestao4.add(respostaCorretaQuestao4);
+        alternativasQuestao4.add("S = A + B . C");
+        alternativasQuestao4.add("S = A.B = AB");
+        alternativasQuestao4.add("S = A.B.C = ABC");
+        alternativasQuestao4.add("S = ~A");
+
+        //exibindo a pergunta:
+        System.out.println("");
+        System.out.println(questao4);
+        System.out.println();
+
+        do {
+            //embaralhando as alternativas
+            Collections.shuffle(alternativasQuestao4);
+
+            //recuperando as alternativas pelo indice da lista
+            System.out.println("a) " + alternativasQuestao4.get(0));
+            System.out.println("b) "+ alternativasQuestao4.get(1));
+            System.out.println("c) "+ alternativasQuestao4.get(2));
+            System.out.println("d) "+ alternativasQuestao4.get(3));
+            System.out.println("e) "+ alternativasQuestao4.get(4));
+
+            System.out.println("");
+            System.out.println("Escolha uma alternativa: ");
+
+            //capturando o primeiro caractere digitado e forçando ele a ser minusculo
+            char alt = sc.next().toLowerCase().charAt(0);
+
+            switch (alt) {
+                case 'a':
+                    //comparando a alternativa escolhida com a resposta correta
+                    if (alternativasQuestao4.get(0).equals(respostaCorretaQuestao4)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'b':
+                    if (alternativasQuestao4.get(1).equals(respostaCorretaQuestao4)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'c':
+                    if (alternativasQuestao4.get(2).equals(respostaCorretaQuestao4)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'd':
+                    if (alternativasQuestao4.get(3).equals(respostaCorretaQuestao4)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'e':
+                    if (alternativasQuestao4.get(4).equals(respostaCorretaQuestao4)) {
                         System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                     } else {
