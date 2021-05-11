@@ -26,6 +26,13 @@ public class Main {
         /*desafio5();
         desafio6();*/
     }
+    
+    public static boolean esperaAcaoUsuario() {
+        Scanner esperaPeloEnter = new Scanner( System.in );
+        System.out.println( "Pressione alguma tecla para Continuar" );
+        esperaPeloEnter.nextLine();
+        return true;
+    }
 
     public static void desafio1(Scanner sc) {
         boolean acerto = false;
@@ -778,8 +785,6 @@ public class Main {
 
         return true;
     }
-
-
 
     public static void imprimiTexto(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
         for (char caractere : mensagem.toCharArray()) {
