@@ -1,6 +1,7 @@
 package axtrim2033;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
@@ -659,6 +660,75 @@ public class Main {
             }
         } while (!acerto);
     }
+    
+    public static boolean desafio9() {
+
+        List<String> alternativas = Arrays.asList( 
+                "Binário, Octal, Decimal, Hexadecimal.",
+                "Binário, Extradecimal, Octal, Hexadecimal.",
+                "Binário, Octal, Lógica, Extradecimal, Hexadecimal.",
+                "Bicentenário, Binário, Octal, Hexadecimal.",
+                "Binário, Octal, Decimal, Sistema Operacional." );
+        String alternativaEscolhida = null;
+        String paraImprimir = null;
+        String alternativaCorreta = "Binário, Octal, Decimal, Hexadecimal.";
+        String opcaoSelecionada = null;
+        int contador = 0;
+        Scanner ent = new Scanner( System.in );
+
+        do {
+            contador++;
+            if ( contador >= 2 ) {
+                System.out.println( "Resposta incorreta! Tente novamente" + "\n" );
+            }
+            Collections.shuffle( alternativas );
+            System.out.println( "\nVOCÊ SABE ME RESPONDER, QUAIS OS TIPOS MAIS CONHECIDOS DE BASES NÚMERICAS?"
+                    + "\n"
+                    + "\nESCOLHA SUA ALTERNATIVA, SABIAMENTE: "
+                    + "\n"
+                    + "\n(A) - " + alternativas.get( 0 ) 
+                    + "\n(B) - " + alternativas.get( 1 )
+                    + "\n(C) - " + alternativas.get( 2 )
+                    + "\n(D) - " + alternativas.get( 3 )
+                    + "\n(E) - " + alternativas.get( 4 ) );
+            opcaoSelecionada = ent.next().toUpperCase();
+
+            switch ( opcaoSelecionada ) {
+            case "A":
+                alternativaEscolhida = alternativas.get( 0 );
+                paraImprimir = "(A) - " + alternativas.get( 0 );
+                System.out.println( "Você escolheu a alternativa: " + paraImprimir );
+                break;
+            case "B":
+                alternativaEscolhida = alternativas.get( 1 );
+                paraImprimir = "(B) - " + alternativas.get( 1 );
+                System.out.println( "Você escolheu a alternativa: " + paraImprimir );
+                break;
+            case "C":
+                alternativaEscolhida = alternativas.get( 2 );
+                paraImprimir = "(C) - " + alternativas.get( 2 );
+                System.out.println( "Você escolheu a alternativa: " + paraImprimir );
+                break;
+            case "D":
+                alternativaEscolhida = alternativas.get( 3 );
+                paraImprimir = "(D) - " + alternativas.get( 3 );
+                System.out.println( "Você escolheu a alternativa: " + paraImprimir );
+                break;
+            case "E":
+                alternativaEscolhida = alternativas.get( 4 );
+                paraImprimir = "(E) - " + alternativas.get( 4 );
+                System.out.println( "Você escolheu a alternativa: " + paraImprimir );
+                break;
+            default:
+                System.out.println( "Você não escolheu uma alternativa válida!" );
+                break;
+            }
+        } while (!alternativaCorreta.equals( alternativaEscolhida ));
+        System.out.println( "Ótimo, era tudo que eu gostaria de saber " + "\n" + paraImprimir );
+
+        return true;
+    }
+
 
     public static void imprimiTexto(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
         for (char caractere : mensagem.toCharArray()) {
