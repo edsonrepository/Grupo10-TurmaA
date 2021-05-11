@@ -2,456 +2,485 @@ package axtrim2033;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Main {
 
-	public static void main(String[] args) {
-
-		desafio5();
-		desafio6();
-	}
-
-	public static void desafioJulio1() {
-
-		Scanner entrada = new Scanner(System.in);
-
-		boolean rcerta = false;
-		int compara = 0;
-
-		ArrayList alternativa = new ArrayList();
-		alternativa.add("(A)");
-		alternativa.add("(B)");
-		alternativa.add("(C)");
-		alternativa.add("(D)");
-		alternativa.add("(E)");
-
-		ArrayList resposta = new ArrayList();
-		resposta.add("NAND");
-		resposta.add("OR");
-		resposta.add("NO");
-		resposta.add("AND");
-		resposta.add("NOR");
-
-		String certa = "AND";
-
-		do {
-
-			System.out.println(
-					"Você precisa de uma porta lógica que verifique entradas e somente a partir desta verificação ");
-			System.out.println(
-					"se chegue à uma saída VERDADEIRA, no entanto, ambas entradas também precisam ser VERDADEIRAS.");
-			System.out.println("Qual porta lógica você deve usar para fazer essa verificação?");
-			for (int i = 1; i <= 5; i++) {
-				System.out.println(alternativa.get(i - 1) + " " + resposta.get(i - 1));
-			}
-			System.out.print("Escolha uma alternativa: ");
-			String escolha = entrada.next();
-			escolha = escolha.toLowerCase();
-
-			switch (escolha) {
-
-			case "a":
-				compara = 0;
-				break;
-
-			case "b":
-				compara = 1;
-				break;
-
-			case "c":
-				compara = 2;
-				break;
-
-			case "d":
-				compara = 3;
-				break;
-
-			case "e":
-				compara = 4;
-				break;
-
-			default:
-				System.out.println("Alternativa inválida!");
-			}
-			if (resposta.get(compara).equals(certa)) {
-				System.out.println("Resposta certa!");
-				rcerta = true;
-			} else {
-				System.out.println("Resposta incorreta, tente outra vez!");
-				Collections.shuffle(resposta);
-			}
-
-		} while (!rcerta);
-
-	}
-
-	public static void desafioJulio2() {
-
-		Scanner entrada = new Scanner(System.in);
-
-		boolean rcerta = false;
-		int compara = 0;
-
-		ArrayList alternativa = new ArrayList();
-		alternativa.add("(A)");
-		alternativa.add("(B)");
-		alternativa.add("(C)");
-		alternativa.add("(D)");
-		alternativa.add("(E)");
-
-		ArrayList resposta = new ArrayList();
-		resposta.add("NOR ; NOR ; NAND");
-		resposta.add("NAND ; NOR ; NOR");
-		resposta.add("NAND ; NAND ; NOR");
-		resposta.add("NOR ; NOR ; NOR");
-		resposta.add("NAND ; NAND ; NAND");
 
-		String certa = "NAND ; NAND ; NOR";
+    public static void main(String[] args) {
+
+        //constantes desafio 1
+        Scanner entrada = new Scanner(System.in);
+
+        desafio1(entrada);
+        desafio2(entrada);
+
+        //TODO: meus desafios 3 e 4(Rennan Costa)
+        //meus desafios
+        /*desafio5();
+        desafio6();*/
+    }
+
+    public static void desafio1(Scanner sc) {
+        boolean acerto = false;
+
+        String pergunta = "VocÃª precisa de uma porta lÃ³gica que verifique entradas e somente a partir desta verificaÃ§Ã£o " +
+                "Chegue a uma saÃ­da VERDADEIRA, no entanto, ambas entradas tambÃ©m precisam ser VERDADEIRAS. " +
+                "Qual porta lÃ³gica vocÃª deve usar para fazer essa verificaÃ§Ã£o?";
+
+        String respostaCorreta = "AND";
+        List<String> alternativas = new ArrayList<>();
+
+        alternativas.add(respostaCorreta);
+        alternativas.add("NAND");
+        alternativas.add("OR");
+        alternativas.add("NO");
+        alternativas.add("NOR");
+
+        do {
+            System.out.println(pergunta);
+
+            Collections.shuffle(alternativas);
+
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
+            System.out.println("e) " + alternativas.get(4));
+
+            System.out.print("Escolha uma alternativa: ");
+            char escolha = sc.next().toLowerCase().charAt(0);
+
+            switch (escolha) {
+                case 'a':
+                    //comparando a alternativa escolhida com a resposta correta
+                    if (alternativas.get(0).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'b':
+                    if (alternativas.get(1).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'c':
+                    if (alternativas.get(2).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'd':
+                    if (alternativas.get(3).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'e':
+                    if (alternativas.get(4).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                default:
+                    System.out.println("Resposta incorreta, tente novamente.");
+                    break;
+            }
+        } while (!acerto);
+    }
+
+    public static void desafio2(Scanner sc) {
+        boolean acerto = false;
+
+        String pergunta = "Qual das alternativas representa a escolha adequada de portas lÃ³gicas em relaÃ§Ã£o Ã s seguintes necessidades: \n" +
+                " â€¢ SÃ³ tenha saÃ­da VERDADEIRA, quando as duas entradas forem FALSAS\n" +
+                " â€¢ Representa a lÃ³gica: S = ~ (A.B)\n" +
+                " â€¢ Representa a lÃ³gica: S = ~ (A+B)";
+
+        String respostaCorreta = "NAND ; NAND ; NOR";
+
+        List<String> alternativas = new ArrayList<>();
+        alternativas.add(respostaCorreta);
+        alternativas.add("NOR ; NOR ; NAND");
+        alternativas.add("NAND ; NOR ; NOR");
+        alternativas.add("NOR ; NOR ; NOR");
+        alternativas.add("NAND ; NAND ; NAND");
+
+        do {
+            System.out.println(pergunta);
+            Collections.shuffle(alternativas);
+
+            System.out.println("a) " + alternativas.get(0));
+            System.out.println("b) " + alternativas.get(1));
+            System.out.println("c) " + alternativas.get(2));
+            System.out.println("d) " + alternativas.get(3));
+            System.out.println("e) " + alternativas.get(4));
+
+            System.out.print("Escolha uma alternativa: ");
+            char escolha = sc.next().toLowerCase().charAt(0);
+
+            switch (escolha) {
+                case 'a':
+                    //comparando a alternativa escolhida com a resposta correta
+                    if (alternativas.get(0).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'b':
+                    if (alternativas.get(1).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'c':
+                    if (alternativas.get(2).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'd':
+                    if (alternativas.get(3).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                case 'e':
+                    if (alternativas.get(4).equals(respostaCorreta)) {
+                        System.out.println("Resposta correta, parabens!.");
+                        acerto = true;
+                    } else {
+                        System.out.println("Resposta incorreta, tente novamente.");
+                    }
+                    break;
+                default:
+                    System.out.println("Resposta incorreta, tente novamente.");
+                    break;
+            }
+        } while (!acerto);
+    }
+
+    public static void desafio7() {
+
+        Scanner lets = new Scanner(System.in);
+
+        ArrayList opcao = new ArrayList<String>();
+        ArrayList respostas = new ArrayList<String>();
+
+        String altString, respC, r;
+        int H = 0;
+
+        int contador = 0;
+        int contad = 1;
+
+        boolean result = false;
+
+        opcao.add("(A)");
+        opcao.add("(B)");
+        opcao.add("(C)");
+        opcao.add("(D)");
+        opcao.add("(E)");
+
+        respostas.add("110111");
+        respostas.add("11111011100");
+        respostas.add("111110111000");
+        respostas.add("111110111");
+        respostas.add("1111010101");
+
+        respC = "11111011100";
+
+        do {
+
+            System.out.println(
+                    "Os computadores utilizam o sistema binï¿½rio ou de base 2 que ï¿½ um sistema de numeraï¿½ï¿½o em que todas as quantidades se representam com base em dois \n "
+                            + "nï¿½meros, ou seja, (0 e 1). Em um computador o nï¿½mero 2012, em base decimal, serï¿½ representado, em base binï¿½ria, por:\r\n");
+
+            for (int L = 1; L <= 5; L++) {
+
+                System.out.println(opcao.get(L - 1) + " - " + respostas.get(L - 1));
+            }
+
+            System.out.println("Digite a alternativa correta: ");
+
+            r = lets.next();
+
+            switch (r.toLowerCase()) {
+
+                case "a":
+                case "A":
+                    H = 0;
+
+                    break;
 
-		do {
+                case "b":
+                case "B":
+                    H = 1;
 
-			System.out.println(
-					"Qual das alternativas representa a escolha adequada de portas lógicas em relação às seguintes necessidades:");
-			System.out.println("• Só tenha saída VERDADEIRA, quando as duas entradas forem FALSAS");
-			System.out.println("• Representa a lógica: S = ~ (A.B)");
-			System.out.println("• Representa a lógica: S = ~ (A+B)");
-			for (int i = 1; i <= 5; i++) {
-				System.out.println(alternativa.get(i - 1) + " " + resposta.get(i - 1));
-			}
-			System.out.print("Escolha uma alternativa: ");
-			String escolha = entrada.next();
-			escolha = escolha.toLowerCase();
+                    break;
 
-			switch (escolha) {
+                case "c":
+                case "C":
+                    H = 2;
 
-			case "a":
-				compara = 0;
-				break;
+                    break;
 
-			case "b":
-				compara = 1;
-				break;
+                case "d":
+                case "D":
+                    H = 3;
 
-			case "c":
-				compara = 2;
-				break;
+                    break;
+
+                case "e":
+                case "E":
+                    H = 4;
 
-			case "d":
-				compara = 3;
-				break;
+                    break;
 
-			case "e":
-				compara = 4;
-				break;
+                default:
 
-			default:
-				System.out.println("Alternativa inválida!");
-			}
-			if (resposta.get(compara).equals(certa)) {
-				System.out.println("Resposta certa!");
-				rcerta = true;
-			} else {
-				System.out.println("Resposta incorreta, tente outra vez!");
-				Collections.shuffle(resposta);
-			}
+                    System.out.println("Alternativa invalida");
 
-		} while (!rcerta);
-	}
+            }
+            if (respostas.get(H).equals(respC)) {
 
-	public static void desafioHenrique1() {
+                System.out.println("Resposta correta.");
+                result = true;
 
-		Scanner lets = new Scanner(System.in);
+            } else {
 
-		ArrayList opcao = new ArrayList<String>();
-		ArrayList respostas = new ArrayList<String>();
+                System.out.println("Resposta incorreta.");
+                Collections.shuffle(respostas);
 
-		String altString, respC, r;
-		int H = 0;
+            }
 
-		int contador = 0;
-		int contad = 1;
+        } while (result == false);
 
-		boolean result = false;
+        lets.close();
+    }
 
-		opcao.add("(A)");
-		opcao.add("(B)");
-		opcao.add("(C)");
-		opcao.add("(D)");
-		opcao.add("(E)");
+    private static void desafio5() {
+        Scanner entrada = new Scanner(System.in);
+        String opcao;
 
-		respostas.add("110111");
-		respostas.add("11111011100");
-		respostas.add("111110111000");
-		respostas.add("111110111");
-		respostas.add("1111010101");
+        int cont = 1;
+        int tentativas = 0;
+        boolean acerto = false;
 
-		respC = "11111011100";
+        System.out.println("Em qual base numï¿½rica estï¿½ o numero 10101110 ");
 
-		do {
+        do {
 
-			System.out.println(
-					"Os computadores utilizam o sistema binário ou de base 2 que é um sistema de numeração em que todas as quantidades se representam com base em dois \n "
-							+ "números, ou seja, (0 e 1). Em um computador o número 2012, em base decimal, será representado, em base binária, por:\r\n");
+            System.out.println("A)Estï¿½ em hexadecimal");
+            System.out.println("B)Estï¿½ em decimal");
+            System.out.println("C)Estï¿½ em binario");
+            System.out.println("D)Estï¿½ em octal");
+            System.out.println("E)Estï¿½ na Base 10");
 
-			for (int L = 1; L <= 5; L++) {
+            System.out.println("R: ");
+            opcao = entrada.next();
 
-				System.out.println(opcao.get(L - 1) + " - " + respostas.get(L - 1));
-			}
+            switch (opcao) {
+                case "C":
+                case "c":
+                    acerto = true;
+                    System.out.println("Resposta Correta! ");
+                    cont = 4;
+                    tentativas++;
+                    break;
 
-			System.out.println("Digite a alternativa correta: ");
+                default:
+                    System.out.println("Resposta Incorreta! ");
+                    tentativas++;
+                    cont++;
+            }
 
-			r = lets.next();
+        } while (cont < 4);
+        if (acerto) {
+            System.out.println("Acertou na tentativa " + tentativas);
 
-			switch (r.toLowerCase()) {
+        } else {
+            System.out.println("As 3 tentativas estï¿½o incorretas ");
 
-			case "a":
-			case "A":
-				H = 0;
+        }
+    }
 
-				break;
+    public static void desafio8() {
 
-			case "b":
-			case "B":
-				H = 1;
+        Scanner lets = new Scanner(System.in);
 
-				break;
+        ArrayList opcao = new ArrayList<String>();
+        ArrayList respostas = new ArrayList<String>();
 
-			case "c":
-			case "C":
-				H = 2;
+        String altString, respC, r;
+        int H = 0;
 
-				break;
+        int contador = 0;
+        int contad = 1;
 
-			case "d":
-			case "D":
-				H = 3;
+        boolean result = false;
 
-				break;
+        opcao.add("(A)");
+        opcao.add("(B)");
+        opcao.add("(C)");
+        opcao.add("(D)");
+        opcao.add("(E)");
 
-			case "e":
-			case "E":
-				H = 4;
+        respostas.add("245");
+        respostas.add("101");
+        respostas.add("111");
+        respostas.add("267");
 
-				break;
+        respC = "245";
 
-			default:
+        do {
 
-				System.out.println("Alternativa invalida");
+            System.out.println("1) 0101001.");
 
-			}
-			if (respostas.get(H).equals(respC)) {
+            System.out.println("2) 1101001.");
 
-				System.out.println("Resposta correta.");
-				result = true;
+            System.out.println("3) 0001101.");
 
-			} else {
+            System.out.println("4) 1010110");
 
-				System.out.println("Resposta incorreta.");
-				Collections.shuffle(respostas);
+            for (int L = 1; L <= 4; L++) {
 
-			}
+                System.out.println(opcao.get(L - 1) + " - " + respostas.get(L - 1));
+            }
 
-		} while (result == false);
+            System.out.println(
+                    "Assinale a alternativa que apresenta o somatï¿½rio dos 4 nï¿½meros acima convertidos para o formato decimal.");
 
-		lets.close();
-	}
+            r = lets.next();
 
-	private static void desafio5() {
-		Scanner entrada = new Scanner(System.in);
-		String opcao;
+            switch (r.toLowerCase()) {
 
-		int cont = 1;
-		int tentativas = 0;
-		boolean acerto = false;
+                case "a":
+                case "A":
+                    H = 0;
 
-		System.out.println("Em qual base numérica está o numero 10101110 ");
+                    break;
 
-		do {
+                case "b":
+                case "B":
+                    H = 1;
 
-			System.out.println("A)Está em hexadecimal");
-			System.out.println("B)Está em decimal");
-			System.out.println("C)Está em binario");
-			System.out.println("D)Está em octal");
-			System.out.println("E)Está na Base 10");
+                    break;
 
-			System.out.println("R: ");
-			opcao = entrada.next();
+                case "c":
+                case "C":
+                    H = 2;
 
-			switch (opcao) {
-			case "C":
-			case "c":
-				acerto = true;
-				System.out.println("Resposta Correta! ");
-				cont = 4;
-				tentativas++;
-				break;
+                    break;
 
-			default:
-				System.out.println("Resposta Incorreta! ");
-				tentativas++;
-				cont++;
-			}
+                case "d":
+                case "D":
+                    H = 3;
 
-		} while (cont < 4);
-		if (acerto) {
-			System.out.println("Acertou na tentativa " + tentativas);
+                    break;
 
-		} else {
-			System.out.println("As 3 tentativas estão incorretas ");
+                case "e":
+                case "E":
+                    H = 4;
 
-		}
-	}
+                    break;
 
-	public static void desafioHenrique2() {
+                default:
 
-		Scanner lets = new Scanner(System.in);
+                    System.out.println("Alternativa invalida");
 
-		ArrayList opcao = new ArrayList<String>();
-		ArrayList respostas = new ArrayList<String>();
+            }
+            if (respostas.get(H).equals(respC)) {
 
-		String altString, respC, r;
-		int H = 0;
+                System.out.println("Resposta correta.");
+                result = true;
 
-		int contador = 0;
-		int contad = 1;
+            } else {
 
-		boolean result = false;
+                System.out.println("Resposta incorreta.");
+                Collections.shuffle(respostas);
 
-		opcao.add("(A)");
-		opcao.add("(B)");
-		opcao.add("(C)");
-		opcao.add("(D)");
-		opcao.add("(E)");
+            }
 
-		respostas.add("245");
-		respostas.add("101");
-		respostas.add("111");
-		respostas.add("267");
+        } while (result == false);
 
-		respC = "245";
+        lets.close();
+    }
 
-		do {
+    public static void desafio6() {
 
-			System.out.println("1) 0101001.");
+        Scanner entrada = new Scanner(System.in);
+        String opcao;
 
-			System.out.println("2) 1101001.");
+        int cont = 1;
+        int tentativas = 0;
+        boolean acerto = false;
 
-			System.out.println("3) 0001101.");
+        System.out
+                .println("Quantos bits devem ser agrupados se vocï¿½ modificar da base (Binï¿½ria) para a base (Octal)? ");
 
-			System.out.println("4) 1010110");
+        do {
 
-			for (int L = 1; L <= 4; L++) {
+            System.out.println("A)2");
+            System.out.println("B)3");
+            System.out.println("C)1");
+            System.out.println("D)4");
+            System.out.println("E)Nenhum");
 
-				System.out.println(opcao.get(L - 1) + " - " + respostas.get(L - 1));
-			}
+            System.out.print("R: ");
+            opcao = entrada.next();
 
-			System.out.println(
-					"Assinale a alternativa que apresenta o somatório dos 4 números acima convertidos para o formato decimal.");
+            switch (opcao) {
+                case "B":
+                case "b":
+                    acerto = true;
+                    System.out.println("Resposta Correta! ");
+                    cont = 4;
+                    tentativas++;
+                    break;
 
-			r = lets.next();
+                default:
+                    System.out.println("Resposta Incorreta! ");
+                    tentativas++;
+                    cont++;
+            }
 
-			switch (r.toLowerCase()) {
+        } while (cont < 4);
+        if (acerto) {
+            System.out.println("Acertou na tentativa " + tentativas);
 
-			case "a":
-			case "A":
-				H = 0;
+        } else {
+            System.out.println("As 3 tentativas estï¿½o incorretas ");
 
-				break;
+        }
 
-			case "b":
-			case "B":
-				H = 1;
+    }
 
-				break;
-
-			case "c":
-			case "C":
-				H = 2;
-
-				break;
-
-			case "d":
-			case "D":
-				H = 3;
-
-				break;
-
-			case "e":
-			case "E":
-				H = 4;
-
-				break;
-
-			default:
-
-				System.out.println("Alternativa invalida");
-
-			}
-			if (respostas.get(H).equals(respC)) {
-
-				System.out.println("Resposta correta.");
-				result = true;
-
-			} else {
-
-				System.out.println("Resposta incorreta.");
-				Collections.shuffle(respostas);
-
-			}
-
-		} while (result == false);
-
-		lets.close();
-	}
-
-	public static void desafio6() {
-
-		Scanner entrada = new Scanner(System.in);
-		String opcao;
-
-		int cont = 1;
-		int tentativas = 0;
-		boolean acerto = false;
-
-		System.out
-				.println("Quantos bits devem ser agrupados se você modificar da base (Binária) para a base (Octal)? ");
-
-		do {
-
-			System.out.println("A)2");
-			System.out.println("B)3");
-			System.out.println("C)1");
-			System.out.println("D)4");
-			System.out.println("E)Nenhum");
-
-			System.out.print("R: ");
-			opcao = entrada.next();
-
-			switch (opcao) {
-			case "B":
-			case "b":
-				acerto = true;
-				System.out.println("Resposta Correta! ");
-				cont = 4;
-				tentativas++;
-				break;
-
-			default:
-				System.out.println("Resposta Incorreta! ");
-				tentativas++;
-				cont++;
-			}
-
-		} while (cont < 4);
-		if (acerto) {
-			System.out.println("Acertou na tentativa " + tentativas);
-
-		} else {
-			System.out.println("As 3 tentativas estão incorretas ");
-
-		}
-
-	}
+    public static void imprimiTexto(String mensagem, TimeUnit unit, long tempo_mensagem) throws InterruptedException {
+        for (char caractere : mensagem.toCharArray()) {
+            System.out.print(caractere);
+            unit.sleep(tempo_mensagem);
+        }
+    }
 
 }
