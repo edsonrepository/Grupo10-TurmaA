@@ -17,6 +17,13 @@ public class Main {
         menu(entrada);
 
     }
+    
+    public static boolean esperaAcaoUsuario() {
+        Scanner esperaPeloEnter = new Scanner( System.in );
+        System.out.println( "Pressione alguma tecla para Continuar" );
+        esperaPeloEnter.nextLine();
+        return true;
+    }
 
     public static void menu(Scanner sc) {
         int escolha = 0;
