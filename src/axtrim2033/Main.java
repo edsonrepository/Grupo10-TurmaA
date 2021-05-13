@@ -13,7 +13,7 @@ public class Main {
     public static final String ANSI_GREEN = "\u001B[32m";
 
     //constantes
-    static int temp_narrativa = 0, temp_dialog = 0;
+    static int temp_narrativa = 35, temp_dialog = 60;
     static String nomePersonagem = "";
 
     public static void main(String[] args) {
@@ -25,13 +25,6 @@ public class Main {
         capitulo1();
         //capitulo2();
 
-    }
-
-    public static boolean esperaAcaoUsuario() {
-        Scanner esperaPeloEnter = new Scanner(System.in);
-        System.out.println("Pressione alguma tecla para Continuar");
-        esperaPeloEnter.nextLine();
-        return true;
     }
 
     public static void menu(Scanner sc) {
@@ -65,8 +58,7 @@ public class Main {
         } while (escolha <= 0 || escolha >= 5);
     }
 
-
-    public static void desafio1(Scanner sc) {
+    public static void desafio1(Scanner sc) throws InterruptedException {
         boolean acerto = false;
 
         String pergunta = "Você precisa de uma porta lógica que verifique entradas e somente a partir desta verificação " +
@@ -100,52 +92,69 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + nomePersonagem + " continue assim!", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não!, tente novamente!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + nomePersonagem + " continue assim!", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não!, tente novamente!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + nomePersonagem + " continue assim!", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não!, tente novamente!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + nomePersonagem + " continue assim!", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não!, tente novamente!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + nomePersonagem + " continue assim!", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não!, tente novamente!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
+                    System.out.println("\n");
+                    imprimiTexto(destacaPersonagemTakeus() + ": Não!, tente novamente!", TimeUnit.MICROSECONDS, temp_dialog);
+                    System.out.println("\n");
                     break;
             }
         } while (!acerto);
     }
 
-    public static boolean desafio2(Scanner sc) {
+    public static boolean desafio2(Scanner sc) throws InterruptedException {
         boolean acerto = false;
         int tentativas = 0;
 
@@ -180,68 +189,85 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": interessante... estou impressionado.", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                         tentativas = 4;
                         return true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": não parece certo. Tente de novo!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                         tentativas++;
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": interessante... estou impressionado.", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                         tentativas = 4;
                         return true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": não parece certo. Tente de novo!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                         tentativas++;
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": interessante... estou impressionado.", TimeUnit.MICROSECONDS, temp_dialog);
                         tentativas = 4;
                         acerto = true;
                         return true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": não parece certo. Tente de novo!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                         tentativas++;
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": interessante... estou impressionado.", TimeUnit.MICROSECONDS, temp_dialog);
                         tentativas = 4;
                         acerto = true;
                         return true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": não parece certo. Tente de novo!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                         tentativas++;
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": interessante... estou impressionado.", TimeUnit.MICROSECONDS, temp_dialog);
                         tentativas = 4;
                         acerto = true;
                         return true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": não parece certo. Tente de novo!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                         tentativas++;
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
+                    System.out.println("\n");
+                    imprimiTexto(destacaPersonagemTakeus() + ": não parece certo. Tente de novo!", TimeUnit.MICROSECONDS, temp_dialog);
+                    System.out.println("\n");
                     break;
             }
         } while (tentativas < 3);
         return false;
     }
 
-    public static void desafio3(Scanner sc) {
+    public static void desafio3(Scanner sc) throws InterruptedException {
         boolean acerto = false;
         String tabela = "-------------\n" +
                 "| A | B | S |\n" +
@@ -283,51 +309,68 @@ public class Main {
 
             //capturando o primeiro caractere digitado e forçando ele a ser minusculo
             char alt = sc.next().toLowerCase().charAt(0);
-
             switch (alt) {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + destacaPersonagemPrincipal(nomePersonagem) + ", sempre soube que não me decepcionaria ", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
+                        System.out.println("\n");
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não me desaponte " + destacaPersonagemPrincipal(nomePersonagem) + ", tente mais uma vez!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + destacaPersonagemPrincipal(nomePersonagem) + ", sempre soube que não me decepcionaria ", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não me desaponte " + destacaPersonagemPrincipal(nomePersonagem) + ", tente mais uma vez!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + destacaPersonagemPrincipal(nomePersonagem) + ", sempre soube que não me decepcionaria ", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não me desaponte " + destacaPersonagemPrincipal(nomePersonagem) + ", tente mais uma vez!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + destacaPersonagemPrincipal(nomePersonagem) + ", sempre soube que não me decepcionaria ", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não me desaponte " + destacaPersonagemPrincipal(nomePersonagem) + ", tente mais uma vez!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Muito bem " + destacaPersonagemPrincipal(nomePersonagem) + ", sempre soube que não me decepcionaria ", TimeUnit.MICROSECONDS, temp_dialog);
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Não me desaponte " + destacaPersonagemPrincipal(nomePersonagem) + ", tente mais uma vez!", TimeUnit.MICROSECONDS, temp_dialog);
+                        System.out.println("\n");
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
+                    System.out.println("\n");
+                    imprimiTexto(destacaPersonagemTakeus() + ": Não me desaponte " + destacaPersonagemPrincipal(nomePersonagem) + ", tente mais uma vez!", TimeUnit.MICROSECONDS, temp_dialog);
+                    System.out.println("\n");
                     break;
             }
         } while (!acerto);
@@ -838,12 +881,12 @@ public class Main {
                     "sempre estou conectado a vários cabos que estão interligados ao que parece ser computadores futuristas, não sei se isso tem algum significado,\ntalvez esse mundo não seja exatamente o que pensamos ser..\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("Mas hoje, fui chamado para uma entrevista de emprego, espero que der tudo certo.. ", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto("No caminho para entrevista, " + destacaPersonagemPrincipal(nomePersonagem) + " anda pela calçada...\n" +
+            imprimiTexto("~ No caminho para entrevista, " + destacaPersonagemPrincipal(nomePersonagem) + " anda pela calçada...\n" +
                     "", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto("Então ele nota que um carro preto e misterioso o segue lentamente..", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Então ele nota que um carro preto e misterioso o segue lentamente..", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto("Com isso " + destacaPersonagemPrincipal(nomePersonagem) + " para e encara o carro, o vidro desse, uma figura usando roupas pretas e oculos escuros misteriosa o encara..", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Com isso " + destacaPersonagemPrincipal(nomePersonagem) + " para e encara o carro, o vidro desse, uma figura usando roupas pretas e oculos escuros misteriosa o encara..", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Quem são vocês? e porque estão me seguindo?", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
@@ -855,7 +898,7 @@ public class Main {
             System.out.println("\n");
             imprimiTexto(destacaPersonagemPrincipal("???") + ": eu sou Takeus e ao meu lado o Stelcius.. e eu sei que você tem dúvidas sobre a nossa realidade, tem tido pesadelos que fazem você questionar a sua vida e o mundo..", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto("Com receio, porém curioso " + destacaPersonagemPrincipal(nomePersonagem) + " decide entrar no carro e ouvir o que Takeus tem a dizer.", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Com receio, porém curioso " + destacaPersonagemPrincipal(nomePersonagem) + " decide entrar no carro e ouvir o que Takeus tem a dizer.", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
             imprimiTexto(destacaPersonagemTakeus() + ": entendemos e acreditamos no desejo que move sua vontade, isso nos entusiasma, no entanto, primeiramente precisamos saber se você é capaz de resolver alguns simples desafios e está apto para vir conosco.", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
@@ -870,26 +913,26 @@ public class Main {
                 System.out.println("\n");
                 imprimiTexto(destacaPersonagemTakeus() + ": meus parabens, era o que eu esperava de você " + destacaPersonagemPrincipal(nomePersonagem), TimeUnit.MILLISECONDS, temp_dialog);
                 System.out.println("\n");
-                imprimiTexto("Nesse momento, enquanto Stelcius dirige, Takeus pega um tipo de seringa acoplada à um leitor digital, e segurando o braço do " + destacaPersonagemPrincipal(nomePersonagem), TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Nesse momento, enquanto Stelcius dirige, Takeus pega um tipo de seringa acoplada à um leitor digital, e segurando o braço do " + destacaPersonagemPrincipal(nomePersonagem), TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("insere rapidamente a “agulha”, porém, não injeta nada, ao contrário, suga um dispositivo robótico minúsculo,\n" +
+                imprimiTexto("~ insere rapidamente a “agulha”, porém, não injeta nada, ao contrário, suga um dispositivo robótico minúsculo,\n" +
                         "metálico, com formato de vírus, movimentando-se, que ao ser escaneado pelo leitor digital, exibe a mensagem “AMEAÇA DETECTADA”. ", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("Takeus dá um comando, ao apertar um pequeno botão no leitor e ativa um micro triturador dentro da seringa\n" +
+                imprimiTexto("~ Takeus dá um comando, ao apertar um pequeno botão no leitor e ativa um micro triturador dentro da seringa\n" +
                         "e exibindo a mensagem “AMEAÇA NEUTRALIZADA”", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
                 imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " se assusta com tudo aquilo e desmaia no restante do caminho.", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("Ao acordar, já está na sede, um prédio bonito, organizado e limpo, muito aconchegante e estruturado.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Ao acordar, já está na sede, um prédio bonito, organizado e limpo, muito aconchegante e estruturado.", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("Takeus o convida para tomar uma água em sua sala, enquanto conversam.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Takeus o convida para tomar uma água em sua sala, enquanto conversam.", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("Já em sua sala, sentando-se na cadeira atrás da mesa e fazendo o gesto para o " + destacaPersonagemPrincipal(nomePersonagem) + " se sentar também.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Já em sua sala, sentando-se na cadeira atrás da mesa e fazendo o gesto para o " + destacaPersonagemPrincipal(nomePersonagem) + " se sentar também.", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
                 imprimiTexto(destacaPersonagemTakeus() + ": Sente-se, fique à vontade. Muitas pessoas vivem suas vidas e não se perguntam como seria se fosse diferente.\n" +
                         "Eu preciso saber se você está disposto e quer aceitar o que tenho para te oferecer.", TimeUnit.MILLISECONDS, temp_dialog);
                 System.out.println("\n");
-                imprimiTexto("Estendendo uma mão com uma pílula azul e outra com uma pílula vermelha.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Estendendo uma mão com uma pílula azul e outra com uma pílula vermelha.", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
                 imprimiTexto(destacaPersonagemTakeus() + ": Se você escolher a pílula azul poderá continuar com sua vida normalmente, como sempre foi.\n" +
                         "Se você escolher a pílula vermelha, eu irei te contar a verdade, porém jamais a sua vida será a mesma. Pense e escolha sabiamente", TimeUnit.MILLISECONDS, temp_dialog);
@@ -936,14 +979,40 @@ public class Main {
                         System.out.println("\n");
                         imprimiTexto(destacaPersonagemTakeus() + ": Eu não disse que seria fácil " + destacaPersonagemPrincipal(nomePersonagem) + ", eu disse que seria a VERDADE!", TimeUnit.MILLISECONDS, temp_dialog);
                         System.out.println("\n");
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Mas, mas... como eu mudo isso? como posso ajudar?", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Gosto de sua vontade " + destacaPersonagemPrincipal(nomePersonagem) + "...", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Para darmos inicio a mudança temos que começar a mudança em você", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": Precisamos dar inicio ao seu treinamento.", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": O que me diz " + destacaPersonagemPrincipal(nomePersonagem) + " podemos começar?", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+
+                        String resposta = "";
+
+                        do {
+                            resposta = sc.next();
+                            if (resposta.toLowerCase().equals("sim") || resposta.toLowerCase().equals("vamos") || resposta.toLowerCase().equals("bora")) {
+                                imprimiTexto(destacaPersonagemTakeus() + ": Ótimo, vamos começar! ", TimeUnit.MILLISECONDS, temp_dialog);
+                                System.out.println("\n");
+                            } else {
+                                imprimiTexto(destacaPersonagemTakeus() + ": O destino do mundo depende disso, pense novamente e responda!", TimeUnit.MICROSECONDS, temp_dialog);
+                                System.out.println("\n");
+                            }
+
+                        } while (!(resposta.toLowerCase().equals("sim") || resposta.toLowerCase().equals("vamos") || resposta.toLowerCase().equals("bora")));
 
                         //inicia treinamento
                         //dois desafios, e finalização do capitlo 1
                         desafio1(sc);
+                        System.out.println("\n");
                         desafio3(sc);
 
                         //finalizando capitulo1
-                        imprimiTexto(destacaPersonagemTakeus() + ": muito bem " + destacaPersonagemPrincipal(nomePersonagem) + " você completou seu treinamento com sucesso, vamos continuar com o trabalho.", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto(destacaPersonagemTakeus() + ": " + destacaPersonagemPrincipal(nomePersonagem) + " você completou seu treinamento com sucesso, vamos continuar com o trabalho.", TimeUnit.MILLISECONDS, temp_dialog);
 
                         //iniciando capitlo 2
                         capitulo2();
@@ -952,6 +1021,8 @@ public class Main {
                         //perde o jogo
                         acerto = true;
                         imprimiTexto(destacaPersonagemTakeus() + ": Lamento sua escolha " + destacaPersonagemPrincipal(nomePersonagem) + ". Pode continuar com sua vida sem sentido e patetica..", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto("~ Takeus continuará procurando o escolhido...", TimeUnit.MICROSECONDS, temp_narrativa);
 
                     } else {
                         //valor inválido
@@ -984,11 +1055,11 @@ public class Main {
             System.out.println("\n");
             imprimiTexto("Eles correm em direção à um grande prédio e ao passar pela recepção são atacados por um grupo que faz parte da segurança do local.", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto("~ O segurança com tranjes militares avança em direção ao " + destacaPersonagemPrincipal(nomePersonagem) + " e impulsiona um golpe em direção ao seu rosto.", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ O segurança com trajes militares avança em direção ao " + destacaPersonagemPrincipal(nomePersonagem) + " e impulsiona um golpe em direção ao seu rosto.", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
             imprimiTexto("~ Com sua percepção avançada devido ao treinamentos " + destacaPersonagemPrincipal(nomePersonagem) + " analisa as possibilidades de ação..", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            
+
             //ele sempra vai ganhar este desafio
             int tentativasDesafio4 = desafio4(sc);
             if (tentativasDesafio4 == 1) {
