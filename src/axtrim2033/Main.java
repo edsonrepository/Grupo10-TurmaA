@@ -1,26 +1,25 @@
 package axtrim2033;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 public class Main {
+
+    static int temp_narrativa = 0, temp_dialog = 0;
+    static String nomePersonagem = "";
 
     public static void main(String[] args) {
         //constante
         Scanner entrada = new Scanner(System.in);
 
-        menu(entrada);
+        //menu(entrada);
+        capitulo1();
 
     }
-    
+
     public static boolean esperaAcaoUsuario() {
-        Scanner esperaPeloEnter = new Scanner( System.in );
-        System.out.println( "Pressione alguma tecla para Continuar" );
+        Scanner esperaPeloEnter = new Scanner(System.in);
+        System.out.println("Pressione alguma tecla para Continuar");
         esperaPeloEnter.nextLine();
         return true;
     }
@@ -136,8 +135,9 @@ public class Main {
         } while (!acerto);
     }
 
-    public static void desafio2(Scanner sc) {
+    public static boolean desafio2(Scanner sc) {
         boolean acerto = false;
+        int tentativas = 0;
 
         String pergunta = "Qual das alternativas representa a escolha adequada de portas lógicas em relação às seguintes necessidades: \n" +
                 " • Só tenha saída VERDADEIRA, quando as duas entradas forem FALSAS\n" +
@@ -172,47 +172,63 @@ public class Main {
                     if (alternativas.get(0).equals(respostaCorreta)) {
                         System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas = 4;
+                        return true;
                     } else {
                         System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
                         System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas = 4;
+                        return true;
                     } else {
                         System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
                         System.out.println("Resposta correta, parabens!.");
+                        tentativas = 4;
                         acerto = true;
+                        return true;
                     } else {
                         System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
                         System.out.println("Resposta correta, parabens!.");
+                        tentativas = 4;
                         acerto = true;
+                        return true;
                     } else {
                         System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
                         System.out.println("Resposta correta, parabens!.");
+                        tentativas = 4;
                         acerto = true;
+                        return true;
                     } else {
                         System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 default:
                     System.out.println("Resposta incorreta, tente novamente.");
                     break;
             }
-        } while (!acerto);
+        } while (tentativas < 3);
+        return false;
     }
 
     public static void desafio3(Scanner sc) {
@@ -760,6 +776,133 @@ public class Main {
 
         return true;
     }
+
+    public static void capitulo1() {
+        Scanner sc = new Scanner(System.in);
+        try {
+            imprimiTexto("???: 2033, a pandemia já foi vencida, fomos vacinados e curados\n" +
+                    "mas as pessoas ainda continuam distantes uma das outras, nem sei ao certo o porque,\n" +
+                    "talvez medo de um novo virus, ou uma nova onda de doenças fatais.. \n" +
+                    "eu me chamo: ", TimeUnit.MILLISECONDS, temp_narrativa);
+            nomePersonagem = sc.next();
+
+            System.out.println("\n");
+            imprimiTexto(nomePersonagem + ": Sou programador, e estou procurando um novo emprego a um bom tempo\n" +
+                    "tem sido dificil, estou dormindo muito mal ultimamente, tendo pesadelos estranhos onde\n" +
+                    "sempre estou conectado a vários cabos que estão interligados ao que parece ser computadores futuristas, não sei se isso tem algum significado,\ntalvez esse mundo não seja exatamente o que pensamos ser..\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("Mas hoje, fui chamado para uma entrevista de emprego, espero que der tudo certo.. ", TimeUnit.MILLISECONDS, temp_narrativa);
+
+
+            System.out.println("\n");
+            imprimiTexto("No caminho para entrevista, " + nomePersonagem + " anda pela calçada...\n" +
+                    "", TimeUnit.MILLISECONDS, temp_narrativa);
+            System.out.println("\n");
+            imprimiTexto("Então ele nota que um carro preto e misterioso o segue lentamente..", TimeUnit.MILLISECONDS, temp_narrativa);
+            System.out.println("\n");
+            imprimiTexto("Com isso " + nomePersonagem + " para e encara o carro, o vidro desse, uma figura usando roupas pretas e oculos escuros misteriosa o encara..", TimeUnit.MILLISECONDS, temp_narrativa);
+            System.out.println("\n");
+            imprimiTexto(nomePersonagem + ": Quem são vocês? e porque estão me seguindo?", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto("???:  Estamos te observando a um bom tempo " + nomePersonagem + ", acreditamos que você possa nos ajudar em um trabalho muito especial..", TimeUnit.MILLISECONDS, temp_narrativa);
+            System.out.println("\n");
+            imprimiTexto("mas precisamos saber se você está apto a isso", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto(nomePersonagem + ": do que está falando? como assim trabalho especial? eu nem sei quem você é?", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto("???: eu sou Takeus e ao meu lado o Stelcius.. e eu sei que você tem dúvidas sobre a nossa realidade, tem tido pesadelos que fazem você questionar a sua vida e o mundo..", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto("Com receio, porém curioso " + nomePersonagem + " decide entrar no carro e ouvir o que Takeus tem a dizer.", TimeUnit.MILLISECONDS, temp_narrativa);
+            System.out.println("\n");
+            imprimiTexto("Takeus: entendemos e acreditamos no desejo que move sua vontade, isso nos entusiasma, no entanto, primeiramente precisamos saber se você é capaz de resolver alguns simples desafios e está apto para vir conosco.", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto(nomePersonagem + " com medo e receio, mas disposto a resolver este enigma aceita o desafio.", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto(nomePersonagem + " qual é o desafio?", TimeUnit.MILLISECONDS, temp_dialog);
+            System.out.println("\n");
+            imprimiTexto("Takeus: uma pergunta, responda com sabedoria: ", TimeUnit.MILLISECONDS, temp_dialog);
+
+            if (desafio2(sc)) {
+                imprimiTexto("Takeus: meus parabens, era o que eu esperava de você " + nomePersonagem, TimeUnit.MILLISECONDS, temp_dialog);
+                System.out.println("\n");
+                imprimiTexto("Nesse momento, enquanto Stelcius dirige, Takeus pega um tipo de seringa acoplada à um leitor digital, e segurando o braço do " + nomePersonagem, TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("insere rapidamente a “agulha”, porém, não injeta nada, ao contrário, suga um dispositivo robótico minúsculo,\n " +
+                        "metálico, com formato de vírus, movimentando-se, que ao ser escaneado pelo leitor digital, exibe a mensagem “AMEAÇA DETECTADA”. ", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("Takeus dá um comando, ao apertar um pequeno botão no leitor e ativa um micro triturador dentro da seringa\n" +
+                        "e exibindo a mensagem “AMEAÇA NEUTRALIZADA”", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto(nomePersonagem + " se assusta com tudo aquilo e desmaia no restante do caminho.", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("Ao acordar, já está na sede, um prédio bonito, organizado e limpo, muito aconchegante e estruturado.", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("Takeus o convida para tomar uma água em sua sala, enquanto conversam.", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("Já em sua sala, sentando-se na cadeira atrás da mesa e fazendo o gesto para o jovem se sentar também.", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("Takeus: Sente-se, fique à vontade. Muitas pessoas vivem suas vidas e não se perguntam como seria se fosse diferente.\n " +
+                        "Eu preciso saber se você está disposto e quer aceitar o que tenho para te oferecer.", TimeUnit.MILLISECONDS, temp_dialog);
+                System.out.println("\n");
+                imprimiTexto("Estendendo uma mão com uma pílula azul e outra com uma pílula vermelha.", TimeUnit.MILLISECONDS, temp_narrativa);
+                System.out.println("\n");
+                imprimiTexto("Takeus: Se você escolher a pílula azul poderá continuar com sua vida normalmente, como sempre foi.\n" +
+                        "Se você escolher a pílula vermelha, eu irei te contar a verdade, porém jamais a sua vida será a mesma. Pense e escolha sabiamente ”", TimeUnit.MILLISECONDS, temp_dialog);
+                System.out.println("\n");
+                imprimiTexto("Talkeus: Vermelha ou Azul: ", TimeUnit.MILLISECONDS, temp_dialog);
+                System.out.println("\n");
+                boolean acerto = false;
+
+                do {
+                    String cor = sc.next().toUpperCase();
+                    if (cor.equals("VERMELHA")) {
+                        acerto = true;
+                        //continua historia
+                        imprimiTexto("Muito bem " + nomePersonagem + ", venha comigo tenho que te levar para uma cidade chamada Karnaugh, uma cidade dentro de um mundo virutal", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        imprimiTexto("Indo em direção a uma sala, Takeus acomoda " + nomePersonagem + " em uma cadeira, e acopla um capacete em sua cabeça", TimeUnit.MILLISECONDS, temp_narrativa);
+                        System.out.println("\n");
+                        imprimiTexto("Com uma dor forte e aguda na cabeça " + nomePersonagem + " dorme, e acorda logo em seguida em uma sala branca.", TimeUnit.MILLISECONDS, temp_narrativa);
+                        System.out.println("\n");
+                        imprimiTexto(nomePersonagem + ": O que aconteceu? onde estou?", TimeUnit.MILLISECONDS, temp_dialog);
+                        System.out.println("\n");
+                        //imprimiTexto("Takeus: Isso " + nomePersonagem + " é Karnaugh, um mundo virtual, tudo que você ver e sentir vem daqui e não é real");
+
+
+                        //inicia treinamento
+                        //dois desafios, e finalização do capitlo 1
+                        desafio1(sc);
+                        desafio3(sc);
+
+                        //finalizando capitulo1
+                        imprimiTexto("Takeus: muito bem " + nomePersonagem + " você completou seu treinamento com sucesso, vamos continuar com o trabalho.", TimeUnit.MILLISECONDS, temp_dialog);
+
+                        //iniciando capitlo 2
+                        capitulo2();
+
+
+                    } else if (cor.equals("AZUL")) {
+                        //perde o jogo
+                        acerto = true;
+                        imprimiTexto("Takues: Lamento sua escolha " + nomePersonagem + ". Pode continuar com sua vida sem sentido e patetica..", TimeUnit.MILLISECONDS, temp_dialog);
+
+                    } else {
+                        //valor inválido
+                        imprimiTexto("Takeus: não entendi, escolha entre a pilula VERMELHA e AZUL: ", TimeUnit.MILLISECONDS, temp_dialog);
+                    }
+                } while (!acerto);
+
+            } else {
+                imprimiTexto("Takeus: infelizmente você não é o que procuramos, saia do carro! ", TimeUnit.MILLISECONDS, temp_dialog);
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void capitulo2() {
+
+    }
+
 
     public static void instrucoes() {
         Scanner sc = new Scanner(System.in);
