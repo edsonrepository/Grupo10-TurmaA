@@ -13,18 +13,16 @@ public class Main {
     public static final String ANSI_GREEN = "\u001B[32m";
 
     //constantes
-    static int temp_narrativa = 35, temp_dialog = 60;
-    static String nomePersonagem = "";
+    static int temp_narrativa = 0, temp_dialog = 0;
+    static String nomePersonagem = "Rennan";
 
     public static void main(String[] args) {
         //constante
         Scanner entrada = new Scanner(System.in);
-
-
         //menu(entrada);
-        capitulo1();
+        //capitulo1();
         //capitulo2();
-
+        desafio9();
     }
 
     public static void menu(Scanner sc) {
@@ -42,7 +40,7 @@ public class Main {
                     break;
                 case 2:
                     //chamar método para jogar
-                    System.out.println("Jogar");
+                    capitulo1();
                     break;
                 case 3:
                     //chamar método para os créditos
@@ -416,7 +414,6 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         tentativas++;
                         acerto = true;
                         return tentativas;
@@ -427,7 +424,6 @@ public class Main {
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         tentativas++;
                         acerto = true;
                         return tentativas;
@@ -438,7 +434,6 @@ public class Main {
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         tentativas++;
                         acerto = true;
                         return tentativas;
@@ -449,7 +444,6 @@ public class Main {
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         tentativas++;
                         acerto = true;
                         return tentativas;
@@ -460,7 +454,6 @@ public class Main {
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         tentativas++;
                         acerto = true;
                         return tentativas;
@@ -509,61 +502,51 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                         tentativas++;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
                         tentativas++;
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                         tentativas++;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
                         tentativas++;
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                         tentativas++;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
                         tentativas++;
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                         tentativas++;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
                         tentativas++;
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                         tentativas++;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+
                         tentativas++;
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
                     tentativas++;
                     break;
             }
@@ -601,52 +584,49 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+
                         acerto = true;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
                     break;
             }
         } while (!acerto);
     }
 
-    public static void desafio7(Scanner sc) {
+    public static int desafio7(Scanner sc) {
+        int tentativas = 0;
         boolean acerto = false;
 
         String pergunta = "Os computadores utilizam o sistema binário ou de base 2 que é um sistema de numeração em que todas as quantidades se representam com base em dois \\n \"\n" +
@@ -678,55 +658,61 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas++;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas++;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas++;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas++;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
                         acerto = true;
+                        tentativas++;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
+                    tentativas++;
                     break;
             }
         } while (!acerto);
+        return 1;
     }
 
-    public static void desafio8(Scanner sc) {
+    public static int desafio8(Scanner sc) {
         boolean acerto = false;
+        int tentativas = 0;
 
-        String pergunta = "Assinale a alternativa que apresenta o somat�rio dos 4 n�meros acima convertidos para o formato decimal: ";
+        String pergunta = "Assinale a alternativa que apresenta o somatório dos 4 números acima convertidos para o formato decimal: ";
         String respostaCorreta = "245";
 
         List<String> alternativas = new ArrayList<>();
@@ -753,53 +739,58 @@ public class Main {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        tentativas++;
                         acerto = true;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        tentativas++;
                         acerto = true;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        tentativas++;
                         acerto = true;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        tentativas++;
                         acerto = true;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-                        System.out.println("Resposta correta, parabens!.");
+                        tentativas++;
                         acerto = true;
+                        return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        tentativas++;
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
+                    tentativas++;
                     break;
             }
         } while (!acerto);
+        return 1;
     }
 
     public static boolean desafio9() {
-
         List<String> alternativas = Arrays.asList(
                 "Binário, Octal, Decimal, Hexadecimal.",
                 "Binário, Extradecimal, Octal, Hexadecimal.",
@@ -818,51 +809,46 @@ public class Main {
             if (contador >= 2) {
                 System.out.println("Resposta incorreta! Tente novamente" + "\n");
             }
+
+            //UAIS OS TIPOS MAIS CONHECIDOS DE BASES NÚMERICAS
             Collections.shuffle(alternativas);
-            System.out.println("\nVOCÊ SABE ME RESPONDER, QUAIS OS TIPOS MAIS CONHECIDOS DE BASES NÚMERICAS?"
+            System.out.println("\nQuais os tipos mais conhecidos de bases númericas?"
                     + "\n"
                     + "\nESCOLHA SUA ALTERNATIVA, SABIAMENTE: "
                     + "\n"
-                    + "\n(A) - " + alternativas.get(0)
-                    + "\n(B) - " + alternativas.get(1)
-                    + "\n(C) - " + alternativas.get(2)
-                    + "\n(D) - " + alternativas.get(3)
-                    + "\n(E) - " + alternativas.get(4));
+                    + "\n(a) - " + alternativas.get(0)
+                    + "\n(b) - " + alternativas.get(1)
+                    + "\n(c) - " + alternativas.get(2)
+                    + "\n(d) - " + alternativas.get(3)
+                    + "\n(e) - " + alternativas.get(4));
             opcaoSelecionada = ent.next().toUpperCase();
 
             switch (opcaoSelecionada) {
                 case "A":
                     alternativaEscolhida = alternativas.get(0);
                     paraImprimir = "(A) - " + alternativas.get(0);
-                    System.out.println("Você escolheu a alternativa: " + paraImprimir);
                     break;
                 case "B":
                     alternativaEscolhida = alternativas.get(1);
                     paraImprimir = "(B) - " + alternativas.get(1);
-                    System.out.println("Você escolheu a alternativa: " + paraImprimir);
                     break;
                 case "C":
                     alternativaEscolhida = alternativas.get(2);
                     paraImprimir = "(C) - " + alternativas.get(2);
-                    System.out.println("Você escolheu a alternativa: " + paraImprimir);
                     break;
                 case "D":
                     alternativaEscolhida = alternativas.get(3);
                     paraImprimir = "(D) - " + alternativas.get(3);
-                    System.out.println("Você escolheu a alternativa: " + paraImprimir);
                     break;
                 case "E":
                     alternativaEscolhida = alternativas.get(4);
                     paraImprimir = "(E) - " + alternativas.get(4);
-                    System.out.println("Você escolheu a alternativa: " + paraImprimir);
                     break;
                 default:
-                    System.out.println("Você não escolheu uma alternativa válida!");
+                    System.out.println("Resposta incorreta! Tente novamente");
                     break;
             }
         } while (!alternativaCorreta.equals(alternativaEscolhida));
-        System.out.println("Ótimo, era tudo que eu gostaria de saber " + "\n" + paraImprimir);
-
         return true;
     }
 
@@ -953,7 +939,7 @@ public class Main {
                         System.out.println("\n");
                         imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": O que aconteceu? onde estou?", TimeUnit.MILLISECONDS, temp_dialog);
                         System.out.println("\n");
-                        imprimiTexto(destacaPersonagemTakeus() + ": Isto, é a contrução...", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemTakeus() + ": Isto, é a construção...", TimeUnit.MILLISECONDS, temp_dialog);
                         System.out.println("\n");
                         imprimiTexto(destacaPersonagemTakeus() + ": É o nosso programa carregando...", TimeUnit.MILLISECONDS, temp_dialog);
                         System.out.println("\n");
@@ -1063,57 +1049,158 @@ public class Main {
             //ele sempra vai ganhar este desafio
             int tentativasDesafio4 = desafio4(sc);
             if (tentativasDesafio4 == 1) {
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desvia do golpe do segurança, e acerta um golpe preciso e não fatal em seu pescoço, neutralizando instantaneamente", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desvia do golpe do segurança, e acerta um golpe preciso e não fatal em seu pescoço, neutralizando instantaneamente\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio4 == 2) {
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " não consegue se desvia do golpe, mas se recupera rapidamente, pegando com força o braço do segurança e o quebrando-o e o neutralizando", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " não consegue se desvia do golpe, mas se recupera rapidamente, pegando com força o braço do segurança e o quebrando-o e o neutralizando\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio4 > 2) {
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " leva o golpe com toda a força em seu rosto, ficando zonzo e desnortiado, o segurança aproveita a brecha e tenta lhe infligir mais um golpe.", TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " recupera os sentidos rapidamente, e consegue evitar o segundo golpe, agarrando o braço esquerdo do segurança e quebrando-o, e o neutralizando", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " leva o golpe com toda a força em seu rosto, ficando zonzo e desnortiado, o segurança aproveita a brecha e tenta lhe infligir mais um golpe.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " recupera os sentidos rapidamente, e consegue evitar o segundo golpe, agarrando o braço esquerdo do segurança e quebrando-o, e o neutralizando\n", TimeUnit.MILLISECONDS, temp_narrativa);
             }
 
-            imprimiTexto(destacaPersonagemTakeus() + ": encontre o Sentinela, ficarei aqui cuidando destes seguranças!", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemTakeus() + ": encontre o Sentinela, ficarei aqui cuidando destes seguranças!\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto("De repente uma voz interrompe TAKEUS", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("De repente uma voz interrompe TAKEUS\n", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto("Sentinela: Então vocês estão me procurando?", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("Sentinela: Então vocês estão me procurando?\n", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Nos entregue o MAPA DE KARNAUGH e deixaremos você em paz!", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Nos entregue o MAPA DE KARNAUGH e deixaremos você em paz!\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto("Sentinela: Eu sou o guardião deste MAPA, jamais entregaria a vocês!", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("Sentinela: Eu sou o guardião deste MAPA, jamais entregaria a vocês!\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " salta em direção a sentinela..", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " salta em direção a sentinela..\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
 
             int tentativasDesafio5 = desafio5(sc);
             if (tentativasDesafio5 == 1) {
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desfere golpes certeiros, o Sentinela cai se desintegrando, como poeira ao vento, dando a impressão de um programa sendo desfragmentado.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desfere golpes certeiros, o Sentinela cai se desintegrando, como poeira ao vento, dando a impressão de um programa sendo desfragmentado.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio5 <= 3) {
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " aplica um golpe, porém o sentinela consegue desviar, e o acerta em suas costa com uma de suas garras.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " aplica um golpe, porém o sentinela consegue desviar, e o acerta em suas costa com uma de suas garras.\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 imprimiTexto("ferido, o sentinela tenta desferir um golpe mortal em " + destacaPersonagemPrincipal(nomePersonagem), TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto("por sorte " + destacaPersonagemPrincipal(nomePersonagem) + " consegue desviar do golpe, e revida com um chute em sua central de comando, assim a destruindo em pedaços", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(" por sorte " + destacaPersonagemPrincipal(nomePersonagem) + " consegue desviar do golpe, e revida com um chute em sua central de comando, assim a destruindo em pedaços\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio5 > 3) {
                 //personagem morre
-                imprimiTexto("O sentinela desfere um golpe certeiro e mortal com sua gerra em " + destacaPersonagemPrincipal(nomePersonagem) + ", assim o atravessando-o e o matando instantaneamente.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("O sentinela desfere um golpe certeiro e mortal com sua gerra em " + destacaPersonagemPrincipal(nomePersonagem) + ", assim o atravessando-o e o matando instantaneamente.\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("Takeus ao presenciar tal cena cai de joelhos no chão e grita em desepero.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("Takeus ao presenciar tal cena cai de joelhos no chão e grita em desepero.\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto(destacaPersonagemTakeus() + ": NÃAAAAAOOOOOOO!!!!", TimeUnit.MILLISECONDS, temp_dialog);
+                imprimiTexto(destacaPersonagemTakeus() + ": NÃAAAAAOOOOOOO!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
                 System.out.println("\n");
-                imprimiTexto("seu grito ecoa por todo o predio..", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("seu grito ecoa por todo o predio..\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
-                imprimiTexto("Com a morte de " + destacaPersonagemPrincipal(nomePersonagem) + " a humanidade contínua escrava do vírus que as prende numa ilusão dentro de AXTRIM para roubar sua energia e usa-as como fantoches.", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("Com a morte de " + destacaPersonagemPrincipal(nomePersonagem) + " a humanidade contínua escrava do vírus que as prende numa ilusão dentro de AXTRIM para roubar sua energia e usa-as como fantoches.\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 sairDoJogo();
             }
 
-            imprimiTexto("Se recuperando da luta " + destacaPersonagemPrincipal(nomePersonagem) + " anda em direção ao fim corredor e encontra uma porta, ao entrar na sala e ver o armario.", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("ele corre em direção a ele e o abre, encontrando um cofre eletronico", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("Se recuperando da luta " + destacaPersonagemPrincipal(nomePersonagem) + " anda em direção ao fim corredor e encontra uma porta, ao entrar na sala e ver o armario.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("ele corre em direção a ele e o abre, encontrando um cofre eletronico\n", TimeUnit.MILLISECONDS, temp_dialog);
 
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": nesse cofre está o mapa que precisamos, preciso decodificar a senha para abri-lo.", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": nesse cofre está o mapa que precisamos, preciso decodificar a senha para abri-lo.\n", TimeUnit.MILLISECONDS, temp_dialog);
 
             desafio6(sc);
 
+            System.out.println("\n");
             //sem risco de morte, pois o personagem está apenas abrindo o cofre
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " abre o cofre..", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " abre o cofre..\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+            capitulo3();
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void capitulo3() {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.println("\n");
+            imprimiTexto("~ " + destacaPersonagemPrincipal(nomePersonagem) + " vê um dispositivo semelhante à um tablet, mas todo transparente.\n" +
+                    "Ao pegá-lo ele ativa exibindo pontos de luz na cor verde conectados e piscando. Admirado e cansado da luta diz\n .", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Então esse é o MAPA DE KARNAUGH!\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+            imprimiTexto("~ Takeus finalmente chega na sala onde " + nomePersonagem + " venceu a luta, também está cansado e ferido\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemTakeus() + ": " + nomePersonagem + " você conseguiu vencer o Sentinela de Karnaugh, agora precisamos encontrar um amigo para nos ajudar interpretar o mapa e solucionar esse caos\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ Eles saem e vão até um lugar simples, como um bairro de periferia e se dirigem à uma casa simples.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Entrando lá encontram um senhor pacato, de cabelos grisalhos, muito gentil, que está fazendo um chá na cozinha\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemPrincipal("???") + ": estive esperando muito tempo vocês, prazer conhece-lo " + nomePersonagem + ". Você trouxe o MAPA DE KARNAUGH  e quer saber como usá-lo.\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ " + nomePersonagem + " olha surpreso para Takeus que lhe explica...", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemTakeus() + ": Este é Edward Veitch, ele pode lhe dizer como chegar onde precisa. Acompanhe-o e ouça o que ele tem a dizer.\n", TimeUnit.MILLISECONDS, temp_dialog);
+
+            imprimiTexto("~ Edward Veitch sai da cozinha e vai para uma varanda, +nomePersonagem+ acompanha\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": O que está acontecendo? Por que tudo isso?\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("Edward Veitch: Você é o escolhido. Saberá o que fazer no momento certo. Mas antes você precisa conhecer muito bem quem é seu aliado e quem é seu inimigo\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Como irei saber isso?\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("Edward Veitch: O MAPA que você pegou ao vencer aquele Sentinela irá indicar o primeiro passo.\n" +
+                    "Siga o trajeto mostrado. Cada ponto destes que está brilhando simboliza os principais prédios de KARNAUGH, as linhas que os ligam são as vias principais que você deve seguir.\n" +
+                    "Não mude de trajeto. Ao chegar no lugar final, você irá saber o que fazer, mas precisa ir sozinho.\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ " + nomePersonagem + " segue o trajeto indicado por Edward Veitch.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Em determinado momento da trajetória, curiosamente Stelcios aparece.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " se dirige a ele, surpreso por vê-lo ali.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemStelcius() + ": Ora ora, se não é " + nomePersonagem + " eu achei que você não iria conseguir chegar tão longe, espero que esteja preparado.\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + ": Precisamos passar por aquela frota de seguranças para chegar no local de acesso da AXTRIM, que possibilita reprogramar definitivamente a mente das pessoas\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ Eles vão e imediatamente a luta inicia contra aquele pequeno exército de seguranças super habilidosos.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+
+            int tentativasDesafio7 = desafio7(sc);
+
+            if (tentativasDesafio7 == 1) {
+                imprimiTexto("~ Com uma habilidade extraordinaria e focado com o desejo de salvar o mundo " + nomePersonagem + ", neutraliza todos os seguranças rapidamente.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            } else if (tentativasDesafio7 >= 2) {
+                imprimiTexto("~ Todos os seguranças partem para cima de Stelcius e " + nomePersonagem + ", vários mobilizam e infligem diversos golpes nos dois \n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Atordoado, Stelcius se enfurece, e começa a golpear todos os seguranças em uma velocidade impressionante, assim neutralizando-os um por um.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            }
+
+            imprimiTexto("Stelcios: Vamos até a câmara que permite que AXTRIM controle toda a humanidade\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ Eles correm e entram no prédio e chegam a uma sala que tem uma porta de segurança eletrônica.\n" +
+                    "Stelcius a abre e visualizam uma espécie de “servidor” muito robusto e tecnológico conectado à um computador central\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemStelcius() + ": Finalmente chegamos...\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + " Caminha em direção ao computador...\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + " Hahahahahahahaha...\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem + ": O que está acontecendo? É esse computador que precisamos destruir?\n"), TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + ": Na verdade, se você destruir esse computador jamais poderá libertar a humanidade. Mas agora que eu o acessei poderei concluir o que comecei... Hahahahaha\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Como assim? do que está falando?\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + ": Realmente é de se surpreender que você chegou tão longe... Eu irei controlar toda a humanidade e você não poderá fazer nada para impedir! Hahahahahaha!\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ " + nomePersonagem + "o ataca, tentando impedir, mas Stelcios lhe desfere um golpe com as costas de sua mão ao ponto de arremessa-lo para fora da sala principal que estavam\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ " + destacaPersonagemStelcius() + " acessa e abre o programa que permite controlar definitivamente a humanidade através de sua própria mente, iniciando o carregamento para roda-lo.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Nesse momento " + nomePersonagem + " se levanta e ataca novamente, mas dessa vez usando toda sua habilidade consegue desviar do primeiro super golpe de Stelcios, iniciando uma luta jamais vista.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+            int tentativasDesafio8 = desafio8(sc);
+
+            if (tentativasDesafio8 == 1) {
+                imprimiTexto("~ " + nomePersonagem + " concentra toda sua força em um unico golpe e acerta o ponto central onde conectava Stelcius a matrix princial do virus, causando uma explosão que acaba danificando parte do corpo de Stelcius\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            } else if (tentativasDesafio8 <= 3) {
+                imprimiTexto(" ~ Stelcius, desvia do primeiro golpe de " + nomePersonagem + ", e ri de sua tentativa de acerta-lo..\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(" ~ porem " + nomePersonagem + "o supreende com um chute em seu estomago, o danificando-o, fazendo com que ele recue\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            } else {
+                imprimiTexto("- Stelcius, desvia do primeiro golpe de " + nomePersonagem + ", e ri de sua tenttiva de acerta-lo..\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("Stelcius, imediatamente revida com um golpe certeiro, arremessando-o ao chão e o matando.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Com a morte de " + nomePersonagem, TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("A humanidade contínua escrava do vírus que as prende numa ilusão dentro de AXTRIM para roubar sua energia e usa-as como fantoches.", TimeUnit.MILLISECONDS, temp_narrativa);
+                sairDoJogo();
+            }
+
+
+            imprimiTexto("~ Ambos muitos cansados caem no chão debaixo de uma forte chuva\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Stelcios se levanta...", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemStelcius() + ": " + nomePersonagem + " você não me venceu ainda, eu não posso perder\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("~ E como se recuperasse suas forças Stelcius voa em direção à " + nomePersonagem + " para ataca-lo, que está se levantando e se posicionando em pé novamente para lutar.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ " + nomePersonagem + " se prepara para defender o golpe e inicia novamente o embate\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Enquanto essa luta acontece, Takeus descobre toda a verdade sobre Stelcios em um diálogo esclarecedor com Edward Veitch e sai à procura de " + nomePersonagem + " e do computador central\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Ele encontra a sala (agora bastante danificada pela luta) e chega ao computador que prossegue seu carregamento do programa final da AXTRIM\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Ele tenta cancelar o programa, mas não é possível pois é protegido com muitos códigos criptografados em uma linguagem de programação jamais vista antes\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ muito além do nível militar conhecido, com símbolos e palavras nunca antes vistos por humano algum.\n" +
+                    "Então ele ali tenta descobrir qual o conceito utilizado para basear a chave daquela criptografia...\n", TimeUnit.MILLISECONDS, temp_narrativa);
+
+            desafio9();
+
+            System.out.println("\n");
+
+            /*Luta acontecendo e Takeus tentando parar o programa de controle da AXTRIM)
+            Se vencer o desafio final e ganhar o jogo:
+
+            Stelcios acredita que venceu, +nomePersonagem+ exausto cai no chão de joelhos e recebe um golpe das mãos de Stelcios que o atravessa como uma lâmina e o absorve. Porém começam a sair luzes de seu corpo que vira como que uma poeira de programa sendo desfeito, luminosamente.
+            Nesse exato momento, a tela do computador que Takeus tenta impedir a finalização do programa, estando já em 99% de conclusão exibe a mensagem “Carregamento cancelado: erro sistema!” e Takeus diz emocionado com lágrimas nos olhos: “Realmente ele era o escolhido. ”
+
+            O mundo finalmente pode alegrar-se com sua liberdade, pois jamais será escravo novamente de um sistema manipulador. Todos agradecem à bravura de +nomePersonagem+ e jamais se esquecerão de tudo que fez.*/
 
         } catch (InterruptedException e) {
             e.printStackTrace();
@@ -1180,6 +1267,10 @@ public class Main {
 
     public static String destacaPersonagemTakeus() {
         return ANSI_GREEN + "Takeus" + ANSI_RESET;
+    }
+
+    public static String destacaPersonagemStelcius() {
+        return ANSI_GREEN + "Stelcius" + ANSI_RESET;
     }
 
     public static void sairDoJogo() {
