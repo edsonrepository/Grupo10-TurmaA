@@ -20,9 +20,9 @@ public class Main {
         //constante
         Scanner entrada = new Scanner(System.in);
         //menu(entrada);
-        //capitulo1();
+        capitulo1();
         //capitulo2();
-        desafio9();
+        //desafio9();
     }
 
     public static void menu(Scanner sc) {
