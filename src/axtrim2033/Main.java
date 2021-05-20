@@ -58,8 +58,6 @@ public class Main {
     
     public static void jogar() {
         capitulo1();
-        capitulo2();
-        capitulo3();
     }
 
     public static void desafio1(Scanner sc) throws InterruptedException {
