@@ -325,9 +325,9 @@ public class Main {
 		opcao.add("(E)");
 
 		respostas.add("245");
-		respostas.add("101");
+		respostas.add("254");
 		respostas.add("111");
-		respostas.add("267");
+		respostas.add("233");
 
 		respC = "245";
 
