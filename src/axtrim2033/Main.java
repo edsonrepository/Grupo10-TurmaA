@@ -14,15 +14,15 @@ public class Main {
 
     //constantes
     static int temp_narrativa = 0, temp_dialog = 0;
-    static String nomePersonagem = "Rennan";
+    static String nomePersonagem = "";
 
     public static void main(String[] args) {
         //constante
         Scanner entrada = new Scanner(System.in);
-        //menu(entrada);
+        menu(entrada);
         //capitulo1();
         //capitulo2();
-        desafio9();
+//        desafio9();
     }
 
     public static void menu(Scanner sc) {
@@ -40,7 +40,7 @@ public class Main {
                     break;
                 case 2:
                     //chamar método para jogar
-                    capitulo1();
+                    jogar();
                     break;
                 case 3:
                     //chamar método para os créditos
@@ -54,6 +54,10 @@ public class Main {
                     System.out.println("Opção inválida!");
             }
         } while (escolha <= 0 || escolha >= 5);
+    }
+    
+    public static void jogar() {
+        capitulo1();
     }
 
     public static void desafio1(Scanner sc) throws InterruptedException {
@@ -810,7 +814,7 @@ public class Main {
                 System.out.println("Resposta incorreta! Tente novamente" + "\n");
             }
 
-            //UAIS OS TIPOS MAIS CONHECIDOS DE BASES NÚMERICAS
+            //QUAIS OS TIPOS MAIS CONHECIDOS DE BASES NÚMERICAS
             Collections.shuffle(alternativas);
             System.out.println("\nQuais os tipos mais conhecidos de bases númericas?"
                     + "\n"
