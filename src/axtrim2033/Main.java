@@ -22,6 +22,8 @@ public class Main {
         menu(entrada);
         //capitulo1();
         //capitulo2();
+        //desafio9();
+        //desafio4();
 //        desafio9();
     }
 
@@ -422,7 +424,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                        System.out.println(destacaPersonagemPrincipal(nomePersonagem)+ ": acredito que não seja essa a resposta correta");
                         tentativas++;
                     }
                     break;
@@ -432,7 +434,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                    	 System.out.println(destacaPersonagemPrincipal(nomePersonagem)+ ": melhor eu tentar novamente, a resposta parece incorreta");
                         tentativas++;
                     }
                     break;
@@ -442,7 +444,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                    	System.out.println(destacaPersonagemPrincipal(nomePersonagem)+ ": acredito que não seja essa a resposta correta");
                         tentativas++;
                     }
                     break;
@@ -452,7 +454,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                    	System.out.println(destacaPersonagemPrincipal(nomePersonagem)+ ": melhor eu tentar novamente, a resposta parece incorreta");
                         tentativas++;
                     }
                     break;
@@ -462,12 +464,12 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
-                        System.out.println("Resposta incorreta, tente novamente.");
+                    	System.out.println(destacaPersonagemPrincipal(nomePersonagem)+ ": melhor eu tentar novamente, a resposta parece incorreta");
                         tentativas++;
                     }
                     break;
                 default:
-                    System.out.println("Resposta incorreta, tente novamente.");
+                	System.out.println(destacaPersonagemPrincipal(nomePersonagem)+ ": acredito que não seja essa a resposta correta");
                     tentativas++;
                     break;
             }
@@ -1010,7 +1012,7 @@ public class Main {
                     } else if (cor.equals("AZUL")) {
                         //perde o jogo
                         acerto = true;
-                        imprimiTexto(destacaPersonagemTakeus() + ": Lamento sua escolha " + destacaPersonagemPrincipal(nomePersonagem) + ". Pode continuar com sua vida sem sentido e patetica..", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemTakeus() + ": Lamento sua escolha " + destacaPersonagemPrincipal(nomePersonagem) + ". Pode continuar com sua vida sem sentido e patetica...", TimeUnit.MILLISECONDS, temp_dialog);
                         System.out.println("\n");
                         imprimiTexto("~ Takeus continuará procurando o escolhido...", TimeUnit.MICROSECONDS, temp_narrativa);
 
@@ -1039,7 +1041,7 @@ public class Main {
 
             imprimiTexto("Então Takeus leva " + destacaPersonagemPrincipal(nomePersonagem) + " à uma dentro de AXTRIM chamada Karnaugh.", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto(destacaPersonagemTakeus() + ": precisamos encontrar o MAPA DE KARNAUGH para localizar os pontos e determinar os passos que iremos dar daqui a diante", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemTakeus() + ": precisamos encontrar o MAPA DE KARNAUGH para localizar os pontos e determinar os passos que iremos dar daqui a diante. ", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
             imprimiTexto(destacaPersonagemTakeus() + ": ele é guardado por uma sentinela que precisamos vencer antes de pega-lo.", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
@@ -1047,23 +1049,23 @@ public class Main {
             System.out.println("\n");
             imprimiTexto("~ O segurança com trajes militares avança em direção ao " + destacaPersonagemPrincipal(nomePersonagem) + " e impulsiona um golpe em direção ao seu rosto.", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
-            imprimiTexto("~ Com sua percepção avançada devido ao treinamentos " + destacaPersonagemPrincipal(nomePersonagem) + " analisa as possibilidades de ação..", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Com sua percepção avançada devido ao treinamentos " + destacaPersonagemPrincipal(nomePersonagem) + " analisa as possibilidades de ação...", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
 
             //ele sempra vai ganhar este desafio
             int tentativasDesafio4 = desafio4(sc);
             if (tentativasDesafio4 == 1) {
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desvia do golpe do segurança, e acerta um golpe preciso e não fatal em seu pescoço, neutralizando instantaneamente\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desvia do golpe do segurança, e acerta um golpe preciso e não fatal em seu pescoço, neutralizando instantaneamente.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio4 == 2) {
                 imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " não consegue se desvia do golpe, mas se recupera rapidamente, pegando com força o braço do segurança e o quebrando-o e o neutralizando\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio4 > 2) {
                 imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " leva o golpe com toda a força em seu rosto, ficando zonzo e desnortiado, o segurança aproveita a brecha e tenta lhe infligir mais um golpe.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " recupera os sentidos rapidamente, e consegue evitar o segundo golpe, agarrando o braço esquerdo do segurança e quebrando-o, e o neutralizando\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " recupera os sentidos rapidamente, e consegue evitar o segundo golpe, agarrando o braço esquerdo do segurança e quebrando-o, e o neutralizando.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             }
 
             imprimiTexto(destacaPersonagemTakeus() + ": encontre o Sentinela, ficarei aqui cuidando destes seguranças!\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto("De repente uma voz interrompe TAKEUS\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("De repente uma voz interrompe TAKEUS...\n", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
             imprimiTexto("Sentinela: Então vocês estão me procurando?\n", TimeUnit.MILLISECONDS, temp_narrativa);
             System.out.println("\n");
@@ -1071,7 +1073,7 @@ public class Main {
             System.out.println("\n");
             imprimiTexto("Sentinela: Eu sou o guardião deste MAPA, jamais entregaria a vocês!\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " salta em direção a sentinela..\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " salta em direção a sentinela...\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("\n");
 
             int tentativasDesafio5 = desafio5(sc);
@@ -1079,8 +1081,8 @@ public class Main {
                 imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " desfere golpes certeiros, o Sentinela cai se desintegrando, como poeira ao vento, dando a impressão de um programa sendo desfragmentado.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio5 <= 3) {
                 imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " aplica um golpe, porém o sentinela consegue desviar, e o acerta em suas costa com uma de suas garras.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto("ferido, o sentinela tenta desferir um golpe mortal em " + destacaPersonagemPrincipal(nomePersonagem), TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto(" por sorte " + destacaPersonagemPrincipal(nomePersonagem) + " consegue desviar do golpe, e revida com um chute em sua central de comando, assim a destruindo em pedaços\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("ferido, o sentinela tenta desferir um golpe mortal em " + destacaPersonagemPrincipal(nomePersonagem)+", ", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(" por sorte " + destacaPersonagemPrincipal(nomePersonagem) + " consegue desviar do golpe, e revida com um chute em sua central de comando, assim a destruindo em pedaços.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio5 > 3) {
                 //personagem morre
                 imprimiTexto("O sentinela desfere um golpe certeiro e mortal com sua gerra em " + destacaPersonagemPrincipal(nomePersonagem) + ", assim o atravessando-o e o matando instantaneamente.\n", TimeUnit.MILLISECONDS, temp_narrativa);
@@ -1089,14 +1091,14 @@ public class Main {
                 System.out.println("\n");
                 imprimiTexto(destacaPersonagemTakeus() + ": NÃAAAAAOOOOOOO!!!!\n", TimeUnit.MILLISECONDS, temp_dialog);
                 System.out.println("\n");
-                imprimiTexto("seu grito ecoa por todo o predio..\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("seu grito ecoa por todo o predio...\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 System.out.println("\n");
                 imprimiTexto("Com a morte de " + destacaPersonagemPrincipal(nomePersonagem) + " a humanidade contínua escrava do vírus que as prende numa ilusão dentro de AXTRIM para roubar sua energia e usa-as como fantoches.\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 sairDoJogo();
             }
 
             imprimiTexto("Se recuperando da luta " + destacaPersonagemPrincipal(nomePersonagem) + " anda em direção ao fim corredor e encontra uma porta, ao entrar na sala e ver o armario.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("ele corre em direção a ele e o abre, encontrando um cofre eletronico\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("ele corre em direção a ele e o abre, encontrando um cofre eletronico.\n", TimeUnit.MILLISECONDS, temp_dialog);
 
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": nesse cofre está o mapa que precisamos, preciso decodificar a senha para abri-lo.\n", TimeUnit.MILLISECONDS, temp_dialog);
 
@@ -1104,7 +1106,7 @@ public class Main {
 
             System.out.println("\n");
             //sem risco de morte, pois o personagem está apenas abrindo o cofre
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " abre o cofre..\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " abre o cofre...\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
             capitulo3();
 
@@ -1118,29 +1120,29 @@ public class Main {
         try {
             System.out.println("\n");
             imprimiTexto("~ " + destacaPersonagemPrincipal(nomePersonagem) + " vê um dispositivo semelhante à um tablet, mas todo transparente.\n" +
-                    "Ao pegá-lo ele ativa exibindo pontos de luz na cor verde conectados e piscando. Admirado e cansado da luta diz\n .", TimeUnit.MILLISECONDS, temp_narrativa);
+                    "Ao pegá-lo ele ativa exibindo pontos de luz na cor verde conectados e piscando. Admirado e cansado da luta diz.\n .", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Então esse é o MAPA DE KARNAUGH!\n", TimeUnit.MILLISECONDS, temp_dialog);
 
             imprimiTexto("~ Takeus finalmente chega na sala onde " + nomePersonagem + " venceu a luta, também está cansado e ferido\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto(destacaPersonagemTakeus() + ": " + nomePersonagem + " você conseguiu vencer o Sentinela de Karnaugh, agora precisamos encontrar um amigo para nos ajudar interpretar o mapa e solucionar esse caos\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemTakeus() + ": " + nomePersonagem + " você conseguiu vencer o Sentinela de Karnaugh, agora precisamos encontrar um amigo para nos ajudar interpretar o mapa e solucionar esse caos.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto("~ Eles saem e vão até um lugar simples, como um bairro de periferia e se dirigem à uma casa simples.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("~ Entrando lá encontram um senhor pacato, de cabelos grisalhos, muito gentil, que está fazendo um chá na cozinha\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Entrando lá encontram um senhor pacato, de cabelos grisalhos, muito gentil, que está fazendo um chá na cozinha.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemPrincipal("???") + ": estive esperando muito tempo vocês, prazer conhece-lo " + nomePersonagem + ". Você trouxe o MAPA DE KARNAUGH  e quer saber como usá-lo.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto("~ " + nomePersonagem + " olha surpreso para Takeus que lhe explica...", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto(destacaPersonagemTakeus() + ": Este é Edward Veitch, ele pode lhe dizer como chegar onde precisa. Acompanhe-o e ouça o que ele tem a dizer.\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemTakeus() + ": Este é "+ destacaPersonagemEdwardVeitch() +", ele pode lhe dizer como chegar onde precisa. Acompanhe-o e ouça o que ele tem a dizer.\n", TimeUnit.MILLISECONDS, temp_dialog);
 
-            imprimiTexto("~ Edward Veitch sai da cozinha e vai para uma varanda, +nomePersonagem+ acompanha\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemEdwardVeitch()+ " sai da cozinha e vai para uma varanda, +nomePersonagem+ acompanha.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": O que está acontecendo? Por que tudo isso?\n", TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto("Edward Veitch: Você é o escolhido. Saberá o que fazer no momento certo. Mas antes você precisa conhecer muito bem quem é seu aliado e quem é seu inimigo\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemEdwardVeitch() + ": Você é o escolhido. Saberá o que fazer no momento certo. Mas antes você precisa conhecer muito bem quem é seu aliado e quem é seu inimigo.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Como irei saber isso?\n", TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto("Edward Veitch: O MAPA que você pegou ao vencer aquele Sentinela irá indicar o primeiro passo.\n" +
+            imprimiTexto(destacaPersonagemEdwardVeitch() +": O MAPA que você pegou ao vencer aquele Sentinela irá indicar o primeiro passo.\n" +
                     "Siga o trajeto mostrado. Cada ponto destes que está brilhando simboliza os principais prédios de KARNAUGH, as linhas que os ligam são as vias principais que você deve seguir.\n" +
                     "Não mude de trajeto. Ao chegar no lugar final, você irá saber o que fazer, mas precisa ir sozinho.\n", TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto("~ " + nomePersonagem + " segue o trajeto indicado por Edward Veitch.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ " + nomePersonagem + " segue o trajeto indicado por " + destacaPersonagemEdwardVeitch()+".\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ Em determinado momento da trajetória, curiosamente Stelcios aparece.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + " se dirige a ele, surpreso por vê-lo ali.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemStelcius() + ": Ora ora, se não é " + nomePersonagem + " eu achei que você não iria conseguir chegar tão longe, espero que esteja preparado.\n", TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto(destacaPersonagemStelcius() + ": Precisamos passar por aquela frota de seguranças para chegar no local de acesso da AXTRIM, que possibilita reprogramar definitivamente a mente das pessoas\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + ": Precisamos passar por aquela frota de seguranças para chegar no local de acesso da AXTRIM, que possibilita reprogramar definitivamente a mente das pessoas.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto("~ Eles vão e imediatamente a luta inicia contra aquele pequeno exército de seguranças super habilidosos.\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
 
@@ -1149,48 +1151,48 @@ public class Main {
             if (tentativasDesafio7 == 1) {
                 imprimiTexto("~ Com uma habilidade extraordinaria e focado com o desejo de salvar o mundo " + nomePersonagem + ", neutraliza todos os seguranças rapidamente.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio7 >= 2) {
-                imprimiTexto("~ Todos os seguranças partem para cima de Stelcius e " + nomePersonagem + ", vários mobilizam e infligem diversos golpes nos dois \n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ Todos os seguranças partem para cima de Stelcius e " + nomePersonagem + ", vários mobilizam e infligem diversos golpes nos dois. \n", TimeUnit.MILLISECONDS, temp_narrativa);
                 imprimiTexto("~ Atordoado, Stelcius se enfurece, e começa a golpear todos os seguranças em uma velocidade impressionante, assim neutralizando-os um por um.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             }
 
-            imprimiTexto("Stelcios: Vamos até a câmara que permite que AXTRIM controle toda a humanidade\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto("Stelcios: Vamos até a câmara que permite que AXTRIM controle toda a humanidade.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto("~ Eles correm e entram no prédio e chegam a uma sala que tem uma porta de segurança eletrônica.\n" +
-                    "Stelcius a abre e visualizam uma espécie de “servidor” muito robusto e tecnológico conectado à um computador central\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                    "Stelcius a abre e visualizam uma espécie de “servidor” muito robusto e tecnológico conectado à um computador central.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemStelcius() + ": Finalmente chegamos...\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemStelcius() + " Caminha em direção ao computador...\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemStelcius() + " Hahahahahahahaha...\n", TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem + ": O que está acontecendo? É esse computador que precisamos destruir?\n"), TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto(destacaPersonagemStelcius() + ": Na verdade, se você destruir esse computador jamais poderá libertar a humanidade. Mas agora que eu o acessei poderei concluir o que comecei... Hahahahaha\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": O que está acontecendo? É esse computador que precisamos destruir?\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + ": Na verdade, se você destruir esse computador jamais poderá libertar a humanidade. Mas agora que eu o acessei poderei concluir o que comecei... Hahahahaha.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Como assim? do que está falando?\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemStelcius() + ": Realmente é de se surpreender que você chegou tão longe... Eu irei controlar toda a humanidade e você não poderá fazer nada para impedir! Hahahahahaha!\n", TimeUnit.MILLISECONDS, temp_dialog);
-            imprimiTexto("~ " + nomePersonagem + "o ataca, tentando impedir, mas Stelcios lhe desfere um golpe com as costas de sua mão ao ponto de arremessa-lo para fora da sala principal que estavam\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ " + nomePersonagem + "o ataca, tentando impedir, mas Stelcios lhe desfere um golpe com as costas de sua mão ao ponto de arremessa-lo para fora da sala principal que estavam.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ " + destacaPersonagemStelcius() + " acessa e abre o programa que permite controlar definitivamente a humanidade através de sua própria mente, iniciando o carregamento para roda-lo.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ Nesse momento " + nomePersonagem + " se levanta e ataca novamente, mas dessa vez usando toda sua habilidade consegue desviar do primeiro super golpe de Stelcios, iniciando uma luta jamais vista.\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
             int tentativasDesafio8 = desafio8(sc);
 
             if (tentativasDesafio8 == 1) {
-                imprimiTexto("~ " + nomePersonagem + " concentra toda sua força em um unico golpe e acerta o ponto central onde conectava Stelcius a matrix princial do virus, causando uma explosão que acaba danificando parte do corpo de Stelcius\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("~ " + nomePersonagem + " concentra toda sua força em um unico golpe e acerta o ponto central onde conectava Stelcius a matrix princial do virus, causando uma explosão que acaba danificando parte do corpo de Stelcius.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else if (tentativasDesafio8 <= 3) {
-                imprimiTexto(" ~ Stelcius, desvia do primeiro golpe de " + nomePersonagem + ", e ri de sua tentativa de acerta-lo..\n", TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto(" ~ porem " + nomePersonagem + "o supreende com um chute em seu estomago, o danificando-o, fazendo com que ele recue\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(" ~ Stelcius, desvia do primeiro golpe de " + nomePersonagem + ", e ri de sua tentativa de acerta-lo...\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(" ~ porem " + nomePersonagem + "o supreende com um chute em seu estomago, o danificando-o, fazendo com que ele recue.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             } else {
-                imprimiTexto("- Stelcius, desvia do primeiro golpe de " + nomePersonagem + ", e ri de sua tenttiva de acerta-lo..\n", TimeUnit.MILLISECONDS, temp_narrativa);
-                imprimiTexto("Stelcius, imediatamente revida com um golpe certeiro, arremessando-o ao chão e o matando.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto("- Stelcius, desvia do primeiro golpe de " + nomePersonagem + ", e ri de sua tenttiva de acerta-lo...\n", TimeUnit.MILLISECONDS, temp_narrativa);
+                imprimiTexto(" Stelcius, imediatamente revida com um golpe certeiro, arremessando-o ao chão e o matando.\n", TimeUnit.MILLISECONDS, temp_narrativa);
                 imprimiTexto("~ Com a morte de " + nomePersonagem, TimeUnit.MILLISECONDS, temp_narrativa);
                 imprimiTexto("A humanidade contínua escrava do vírus que as prende numa ilusão dentro de AXTRIM para roubar sua energia e usa-as como fantoches.", TimeUnit.MILLISECONDS, temp_narrativa);
                 sairDoJogo();
             }
 
 
-            imprimiTexto("~ Ambos muitos cansados caem no chão debaixo de uma forte chuva\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Ambos muitos cansados caem no chão debaixo de uma forte chuva.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ Stelcios se levanta...", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto(destacaPersonagemStelcius() + ": " + nomePersonagem + " você não me venceu ainda, eu não posso perder\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemStelcius() + ": " + nomePersonagem + " você não me venceu ainda, eu não posso perder.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto("~ E como se recuperasse suas forças Stelcius voa em direção à " + nomePersonagem + " para ataca-lo, que está se levantando e se posicionando em pé novamente para lutar.\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("~ " + nomePersonagem + " se prepara para defender o golpe e inicia novamente o embate\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("~ Enquanto essa luta acontece, Takeus descobre toda a verdade sobre Stelcios em um diálogo esclarecedor com Edward Veitch e sai à procura de " + nomePersonagem + " e do computador central\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("~ Ele encontra a sala (agora bastante danificada pela luta) e chega ao computador que prossegue seu carregamento do programa final da AXTRIM\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto("~ Ele tenta cancelar o programa, mas não é possível pois é protegido com muitos códigos criptografados em uma linguagem de programação jamais vista antes\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ " + nomePersonagem + " se prepara para defender o golpe e inicia novamente o embate.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Enquanto essa luta acontece, Takeus descobre toda a verdade sobre Stelcios em um diálogo esclarecedor com " + destacaPersonagemEdwardVeitch()+ " e sai à procura de " + nomePersonagem + " e do computador central.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Ele encontra a sala (agora bastante danificada pela luta) e chega ao computador que prossegue seu carregamento do programa final da AXTRIM.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ Ele tenta cancelar o programa, mas não é possível pois é protegido com muitos códigos criptografados em uma linguagem de programação jamais vista antes.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ muito além do nível militar conhecido, com símbolos e palavras nunca antes vistos por humano algum.\n" +
                     "Então ele ali tenta descobrir qual o conceito utilizado para basear a chave daquela criptografia...\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
@@ -1275,6 +1277,10 @@ public class Main {
 
     public static String destacaPersonagemStelcius() {
         return ANSI_GREEN + "Stelcius" + ANSI_RESET;
+    }
+    
+    public static String destacaPersonagemEdwardVeitch() {
+        return ANSI_RED + "Edward Veitch" + ANSI_RESET;
     }
 
     public static void sairDoJogo() {
