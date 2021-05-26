@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 
+
 	// cores
 	public static final String ANSI_CYAN = "\u001B[36m";
 	public static final String ANSI_RED = "\u001B[31m";
