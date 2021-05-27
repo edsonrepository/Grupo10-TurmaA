@@ -66,8 +66,8 @@ public class Main {
         boolean acerto = false;
 
         String pergunta = "Você precisa de uma porta lógica que verifique entradas e somente a partir desta verificação " +
-                "Chegue a uma saída VERDADEIRA, no entanto, ambas entradas também precisam ser VERDADEIRAS. " +
-                "Qual porta lógica você deve usar para fazer essa verificação?";
+                "\nChegue a uma saída VERDADEIRA, no entanto, ambas entradas também precisam ser VERDADEIRAS. " +
+                "\nQual porta lógica você deve usar para fazer essa verificação?";
 
         String respostaCorreta = "AND";
         List<String> alternativas = new ArrayList<>();
@@ -80,7 +80,7 @@ public class Main {
 
         do {
             System.out.println(pergunta);
-
+            System.out.println();
             Collections.shuffle(alternativas);
 
             System.out.println("a) " + alternativas.get(0));
@@ -178,6 +178,7 @@ public class Main {
 
         do {
             System.out.println(pergunta);
+            System.out.println();
             Collections.shuffle(alternativas);
 
             System.out.println("a) " + alternativas.get(0));
@@ -281,12 +282,12 @@ public class Main {
                 "| 1 | 1 | 0 |\n" +
                 "-------------";
         String pergunta = "Observando a tabela podemos dizer que a porta logica que esta sendo utilizada é a:";
-        String respostaCorreta = "NOR";
+        String respostaCorreta = "NAND";
         List<String> alternativas = new ArrayList<>();
 
         //populando a lista com as alternativas
         alternativas.add(respostaCorreta);
-        alternativas.add("NAND");
+        alternativas.add("NOR");
         alternativas.add("XNOR");
         alternativas.add("AND");
         alternativas.add("OR");
