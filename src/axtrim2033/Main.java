@@ -1200,6 +1200,8 @@ public class Main {
             desafio9();
 
             System.out.println("\n");
+            System.out.println("\n");
+            
 
             /*Luta acontecendo e Takeus tentando parar o programa de controle da AXTRIM)
             Se vencer o desafio final e ganhar o jogo:
