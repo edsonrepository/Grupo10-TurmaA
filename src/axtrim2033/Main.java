@@ -20,11 +20,7 @@ public class Main {
         //constante
         Scanner entrada = new Scanner(System.in);
         menu(entrada);
-        //capitulo1();
-        //capitulo2();
-        //desafio9();
-        //desafio4();
-//        desafio9();
+    
     }
 
     public static void menu(Scanner sc) {
@@ -797,7 +793,7 @@ public class Main {
         return 1;
     }
 
-    public static boolean desafio9() {
+    public static int desafio9() {
         List<String> alternativas = Arrays.asList(
                 "Binário, Octal, Decimal, Hexadecimal.",
                 "Binário, Extradecimal, Octal, Hexadecimal.",
@@ -809,6 +805,7 @@ public class Main {
         String alternativaCorreta = "Binário, Octal, Decimal, Hexadecimal.";
         String opcaoSelecionada = null;
         int contador = 0;
+        int tentativa = 0;
         Scanner ent = new Scanner(System.in);
 
         do {
@@ -833,30 +830,37 @@ public class Main {
             switch (opcaoSelecionada) {
                 case "A":
                     alternativaEscolhida = alternativas.get(0);
+                    tentativa++;
                     paraImprimir = "(A) - " + alternativas.get(0);
                     break;
                 case "B":
                     alternativaEscolhida = alternativas.get(1);
+                    tentativa++;
                     paraImprimir = "(B) - " + alternativas.get(1);
                     break;
                 case "C":
                     alternativaEscolhida = alternativas.get(2);
+                    tentativa++;
                     paraImprimir = "(C) - " + alternativas.get(2);
                     break;
                 case "D":
                     alternativaEscolhida = alternativas.get(3);
+                    tentativa++;
                     paraImprimir = "(D) - " + alternativas.get(3);
                     break;
                 case "E":
                     alternativaEscolhida = alternativas.get(4);
+                    tentativa++;
                     paraImprimir = "(E) - " + alternativas.get(4);
                     break;
                 default:
                     System.out.println("Resposta incorreta! Tente novamente");
+                    tentativa++;
                     break;
             }
         } while (!alternativaCorreta.equals(alternativaEscolhida));
-        return true;
+        
+        return tentativa;
     }
 
     public static void capitulo1() {
@@ -1197,11 +1201,15 @@ public class Main {
             imprimiTexto("~ muito além do nível militar conhecido, com símbolos e palavras nunca antes vistos por humano algum.\n" +
                     "Então ele ali tenta descobrir qual o conceito utilizado para basear a chave daquela criptografia...\n", TimeUnit.MILLISECONDS, temp_narrativa);
 
-            desafio9();
-
-            System.out.println("\n");
-            System.out.println("\n");
             
+            int tentativas=desafio9();
+            if (tentativas==1) {
+            	imprimiTexto(destacaPersonagemStelcius() +" atinge " + nomePersonagem + " com um soco e o lança contra uma parede de pedras, ali ele se levanta novamente e fixa o olhar em " +destacaPersonagemStelcius(), TimeUnit.MILLISECONDS, temp_narrativa);
+            }else if (tentativas==2) {
+            	imprimiTexto(destacaPersonagemStelcius() +" segura " + nomePersonagem + " pelo pescoço, o golpeia dua vezes no rosto e o lança contra o muro do prédio do fundo", TimeUnit.MILLISECONDS, temp_narrativa);
+            }else {
+            	imprimiTexto(destacaPersonagemStelcius() +" segura " + nomePersonagem + " e voa em alta velocidade, utilizando o corpo de "+nomePersonagem+"como ferramenta para quebrar as paredes, o ferindo gravemente.", TimeUnit.MILLISECONDS, temp_narrativa);
+            }
             imprimiTexto("~ Luta acontecendo e Takeus tentando parar o programa de controle da AXTRIM), se vencer o desafio final e ganhar o jogo", TimeUnit.MILLISECONDS, temp_narrativa);            
             imprimiTexto("~ Stelcios acredita que venceu," +nomePersonagem+ " exausto cai no chão de joelhos e recebe um golpe das mãos de Stelcios que o atravessa como uma lâmina e o absorve. ", TimeUnit.MILLISECONDS, temp_narrativa); 
             imprimiTexto("~ Porém começam a sair luzes de seu corpo que vira como que uma poeira de programa sendo desfeito, luminosamente.", TimeUnit.MILLISECONDS, temp_narrativa);  
@@ -1210,15 +1218,8 @@ public class Main {
             
             
 
-            /*Luta acontecendo e Takeus tentando parar o programa de controle da AXTRIM)
-            Se vencer o desafio final e ganhar o jogo:
+            System.out.println("\n");
 
-            Stelcios acredita que venceu, +nomePersonagem+ exausto cai no chão de joelhos e recebe um golpe das mãos de Stelcios que o atravessa como uma lâmina e o absorve. Porém começam a sair luzes de seu corpo que vira como que uma poeira de programa sendo desfeito, luminosamente.
-            Nesse exato momento, a tela do computador que Takeus tenta impedir a finalização do programa, estando já em 99% de conclusão exibe a mensagem “Carregamento cancelado: erro sistema!” e Takeus diz emocionado com lágrimas nos olhos: “Realmente ele era o escolhido. ”
-
-            O mundo finalmente pode alegrar-se com sua liberdade, pois jamais será escravo novamente de um sistema manipulador. Todos agradecem à bravura de +nomePersonagem+ e jamais se esquecerão de tudo que fez.*/
-
-            
             
         } catch (InterruptedException e) {
             e.printStackTrace();
