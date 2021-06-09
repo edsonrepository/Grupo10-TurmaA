@@ -1202,6 +1202,13 @@ public class Main {
             System.out.println("\n");
             System.out.println("\n");
             
+            imprimiTexto("~ Luta acontecendo e Takeus tentando parar o programa de controle da AXTRIM), se vencer o desafio final e ganhar o jogo", TimeUnit.MILLISECONDS, temp_narrativa);            
+            imprimiTexto("~ Stelcios acredita que venceu," +nomePersonagem+ " exausto cai no chão de joelhos e recebe um golpe das mãos de Stelcios que o atravessa como uma lâmina e o absorve. ", TimeUnit.MILLISECONDS, temp_narrativa); 
+            imprimiTexto("~ Porém começam a sair luzes de seu corpo que vira como que uma poeira de programa sendo desfeito, luminosamente.", TimeUnit.MILLISECONDS, temp_narrativa);  
+            imprimiTexto("~ Nesse exato momento, a tela do computador que Takeus tenta impedir a finalização do programa, estando já em 99% de conclusão exibe a mensagem “Carregamento cancelado: erro sistema!” e Takeus diz emocionado com lágrimas nos olhos: “Realmente ele era o escolhido. ”", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto("~ O mundo finalmente pode alegrar-se com sua liberdade, pois jamais será escravo novamente de um sistema manipulador. Todos agradecem à bravura de" +nomePersonagem+ "e jamais se esquecerão de tudo que fez.", TimeUnit.MILLISECONDS, temp_narrativa);
+            
+            
 
             /*Luta acontecendo e Takeus tentando parar o programa de controle da AXTRIM)
             Se vencer o desafio final e ganhar o jogo:
@@ -1211,6 +1218,8 @@ public class Main {
 
             O mundo finalmente pode alegrar-se com sua liberdade, pois jamais será escravo novamente de um sistema manipulador. Todos agradecem à bravura de +nomePersonagem+ e jamais se esquecerão de tudo que fez.*/
 
+            
+            
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
