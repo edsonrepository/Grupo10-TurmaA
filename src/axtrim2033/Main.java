@@ -475,7 +475,7 @@ public class Main {
         return 1;
     }
 
-    public static int desafio5(Scanner sc) {
+    public static int desafio5(Scanner sc) throws InterruptedException {
         int tentativas = 0;
         boolean acerto = false;
 
@@ -510,6 +510,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -519,6 +520,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não, tem algo errado...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -528,6 +530,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Acho que estou no caminho certo..", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -537,6 +540,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -546,11 +550,12 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
-
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não, tem algo errado...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
                 default:
+                    imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                     tentativas++;
                     break;
             }
@@ -573,7 +578,9 @@ public class Main {
 
         do {
             Collections.shuffle(alternativas);
+            System.out.println("");
             System.out.println(perugnta);
+            System.out.println("");
 
             System.out.println("a) " + alternativas.get(0));
             System.out.println("b) " + alternativas.get(1));
@@ -589,38 +596,26 @@ public class Main {
                     //comparando a alternativa escolhida com a resposta correta
                     if (alternativas.get(0).equals(respostaCorreta)) {
                         acerto = true;
-                    } else {
-
                     }
                     break;
                 case 'b':
                     if (alternativas.get(1).equals(respostaCorreta)) {
                         acerto = true;
-                    } else {
-
                     }
                     break;
                 case 'c':
                     if (alternativas.get(2).equals(respostaCorreta)) {
-
                         acerto = true;
-                    } else {
-
                     }
                     break;
                 case 'd':
                     if (alternativas.get(3).equals(respostaCorreta)) {
-
                         acerto = true;
-                    } else {
-
                     }
                     break;
                 case 'e':
                     if (alternativas.get(4).equals(respostaCorreta)) {
-
                         acerto = true;
-                    } else {
                     }
                     break;
                 default:
