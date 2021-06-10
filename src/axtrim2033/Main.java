@@ -56,7 +56,7 @@ public class Main {
     }
 
     public static void jogar() {
-      capitulo1();
+        capitulo1();
     }
 
     public static void desafio1(Scanner sc) throws InterruptedException {
@@ -510,7 +510,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
-                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -520,7 +520,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
-                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não, tem algo errado...", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não, tem algo errado...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -530,7 +530,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
-                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Acho que estou no caminho certo..", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Acho que estou no caminho certo..", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -540,7 +540,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
-                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -550,12 +550,12 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
-                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não, tem algo errado...", TimeUnit.MILLISECONDS, temp_dialog);
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não, tem algo errado...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
                 default:
-                    imprimiTexto(destacaPersonagemPrincipal(nomePersonagem)+": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
+                    imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não me parece correto, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                     tentativas++;
                     break;
             }
@@ -624,7 +624,7 @@ public class Main {
         } while (!acerto);
     }
 
-    public static int desafio7(Scanner sc) {
+    public static int desafio7(Scanner sc) throws InterruptedException {
         int tentativas = 0;
         boolean acerto = false;
 
@@ -663,6 +663,8 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": É quase isso...", TimeUnit.MILLISECONDS, temp_dialog);
+                        tentativas++;
                     }
                     break;
                 case 'b':
@@ -671,6 +673,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -680,6 +683,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não é bem isso...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -689,6 +693,7 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não é bem isso...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -698,10 +703,12 @@ public class Main {
                         tentativas++;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": É quase isso...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
                 default:
+                    imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não...", TimeUnit.MILLISECONDS, temp_dialog);
                     tentativas++;
                     break;
             }
@@ -709,7 +716,7 @@ public class Main {
         return 1;
     }
 
-    public static int desafio8(Scanner sc) {
+    public static int desafio8(Scanner sc) throws InterruptedException {
         boolean acerto = false;
         int tentativas = 0;
 
@@ -742,6 +749,8 @@ public class Main {
             System.out.print("Escolha uma alternativa: ");
             char alt = sc.next().toLowerCase().charAt(0);
 
+            //TODO: colocar mensagens de error personalizadas
+
             switch (alt) {
                 case 'a':
                     //comparando a alternativa escolhida com a resposta correta
@@ -750,6 +759,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Droga, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -759,6 +769,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Quase...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -768,6 +779,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Quase...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -777,6 +789,7 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Droga, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
@@ -786,10 +799,12 @@ public class Main {
                         acerto = true;
                         return tentativas;
                     } else {
+                        imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Quase...", TimeUnit.MILLISECONDS, temp_dialog);
                         tentativas++;
                     }
                     break;
                 default:
+                    imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Droga, vou tentar de novo!", TimeUnit.MILLISECONDS, temp_dialog);
                     tentativas++;
                     break;
             }
@@ -1138,7 +1153,7 @@ public class Main {
             imprimiTexto("~ " + nomePersonagem + " olha surpreso para Takeus que lhe explica...\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemTakeus() + ": Este é " + destacaPersonagemEdwardVeitch() + ", ele pode lhe dizer como chegar onde precisa. Acompanhe-o e ouça o que ele tem a dizer.\n", TimeUnit.MILLISECONDS, temp_dialog);
 
-            imprimiTexto(destacaPersonagemEdwardVeitch() + " sai da cozinha e vai para uma varanda, "+ nomePersonagem+ " acompanha.\n", TimeUnit.MILLISECONDS, temp_narrativa);
+            imprimiTexto(destacaPersonagemEdwardVeitch() + " sai da cozinha e vai para uma varanda, " + nomePersonagem + " acompanha.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": O que está acontecendo? Por que tudo isso?\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemEdwardVeitch() + ": Você é o escolhido. Saberá o que fazer no momento certo. Mas antes você precisa conhecer muito bem quem é seu aliado e quem é seu inimigo.\n", TimeUnit.MILLISECONDS, temp_dialog);
             imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Como irei saber isso?\n", TimeUnit.MILLISECONDS, temp_dialog);
@@ -1225,7 +1240,7 @@ public class Main {
             imprimiTexto("~ Stelcios acredita que venceu,\n" + nomePersonagem + " exausto cai no chão de joelhos e recebe um golpe das mãos de Stelcios que o atravessa como uma lâmina e o absorve.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ Porém começam a sair luzes de seu corpo que vira como que uma poeira de programa sendo desfeito, luminosamente.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ Nesse exato momento, a tela do computador que Takeus tenta impedir a finalização do programa, estando já em 99% de conclusão exibe a mensagem\n“Carregamento cancelado: erro no sistema!” e Takeus diz emocionado com lágrimas nos olhos:\n", TimeUnit.MILLISECONDS, temp_narrativa);
-            imprimiTexto(destacaPersonagemTakeus()+ ": Realmente ele era o escolhido...\n", TimeUnit.MILLISECONDS, temp_dialog);
+            imprimiTexto(destacaPersonagemTakeus() + ": Realmente ele era o escolhido...\n", TimeUnit.MILLISECONDS, temp_dialog);
             System.out.println("");
             imprimiTexto("~ O mundo finalmente pode alegrar-se com sua liberdade, pois jamais será escravo novamente de um sistema manipulador.\n", TimeUnit.MILLISECONDS, temp_narrativa);
             imprimiTexto("~ Todos agradecem à bravura de " + nomePersonagem + " e jamais se esquecerão de tudo que fez.", TimeUnit.MILLISECONDS, temp_narrativa);
