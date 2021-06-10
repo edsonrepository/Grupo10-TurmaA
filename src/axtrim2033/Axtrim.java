@@ -3,10 +3,9 @@ package axtrim2033;
 import java.util.*;
 import java.util.concurrent.TimeUnit;
 
-public class Main {
+public class Axtrim {
 
     //constantes
-
     //cores
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_RED = "\u001B[31m";
@@ -56,7 +55,7 @@ public class Main {
     }
 
     public static void jogar() {
-        capitulo1();
+        capitulo3();
     }
 
     public static void desafio1(Scanner sc) throws InterruptedException {
@@ -812,7 +811,7 @@ public class Main {
         return 1;
     }
 
-    public static int desafio9() {
+    public static int desafio9() throws InterruptedException {
         List<String> alternativas = Arrays.asList(
                 "Binário, Octal, Decimal, Hexadecimal.",
                 "Binário, Extradecimal, Octal, Hexadecimal.",
@@ -830,7 +829,7 @@ public class Main {
         do {
             contador++;
             if (contador >= 2) {
-                System.out.println("Resposta incorreta! Tente novamente" + "\n");
+                imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Vou tentar de novo.", TimeUnit.MILLISECONDS, temp_dialog);
             }
 
             //QUAIS OS TIPOS MAIS CONHECIDOS DE BASES NÚMERICAS
@@ -844,36 +843,36 @@ public class Main {
                     + "\nc) " + alternativas.get(2)
                     + "\nd) " + alternativas.get(3)
                     + "\ne) " + alternativas.get(4));
-            opcaoSelecionada = ent.next().toUpperCase();
+            opcaoSelecionada = ent.next().toLowerCase();
 
             switch (opcaoSelecionada) {
-                case "A":
+                case "a":
                     alternativaEscolhida = alternativas.get(0);
                     tentativa++;
                     paraImprimir = "(A) - " + alternativas.get(0);
                     break;
-                case "B":
+                case "b":
                     alternativaEscolhida = alternativas.get(1);
                     tentativa++;
                     paraImprimir = "(B) - " + alternativas.get(1);
                     break;
-                case "C":
+                case "c":
                     alternativaEscolhida = alternativas.get(2);
                     tentativa++;
                     paraImprimir = "(C) - " + alternativas.get(2);
                     break;
-                case "D":
+                case "d":
                     alternativaEscolhida = alternativas.get(3);
                     tentativa++;
                     paraImprimir = "(D) - " + alternativas.get(3);
                     break;
-                case "E":
+                case "e":
                     alternativaEscolhida = alternativas.get(4);
                     tentativa++;
                     paraImprimir = "(E) - " + alternativas.get(4);
                     break;
                 default:
-                    System.out.println("Resposta incorreta! Tente novamente");
+                    imprimiTexto(destacaPersonagemPrincipal(nomePersonagem) + ": Não posso errar!", TimeUnit.MILLISECONDS, temp_dialog);
                     tentativa++;
                     break;
             }
@@ -1259,6 +1258,10 @@ public class Main {
         System.out.println("Axtrim2033 apresenta vários desafios de multipla escolha, \n" +
                 "basta escolhar uma das alternativas que será exibida (a,b,c,d OU e).\n" +
                 "mas escolha com sabedoria, o destino do mundo está em suas mãos...");
+        System.out.println("");
+        System.out.println("OBS: Axtrim usa cores para destacar as falas dos personagens,\n" +
+                "caso esteja jogando no eclipse talvez seja necessário a instalação de um plugin: ANSI Escape in Console.\n");
+        System.out.println("Guia de instalação do plugin: https://github.com/mihnita/ansi-econsole/wiki");
         do {
             System.out.println("");
             System.out.println("1 - Voltar para o menu principal");
